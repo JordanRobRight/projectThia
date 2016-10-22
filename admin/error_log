@@ -1,4 +1,0 @@
-[20-Oct-2016 23:12:01 UTC] PHP Warning:  include(/home/wall-e/public_html/siam/header.php): failed to open stream: No such file or directory in /home/walle/public_html/siam/admin/login.php on line 1
-[20-Oct-2016 23:12:01 UTC] PHP Warning:  include(): Failed opening '/home/wall-e/public_html/siam/header.php' for inclusion (include_path='.;/path/to/php/pear') in /home/walle/public_html/siam/admin/login.php on line 1
-[20-Oct-2016 23:12:01 UTC] PHP Warning:  include(/home/wall-e/public_html/siam/footer.php): failed to open stream: No such file or directory in /home/walle/public_html/siam/admin/login.php on line 21
-[20-Oct-2016 23:12:01 UTC] PHP Warning:  include(): Failed opening '/home/wall-e/public_html/siam/footer.php' for inclusion (include_path='.;/path/to/php/pear') in /home/walle/public_html/siam/admin/login.php on line 21
