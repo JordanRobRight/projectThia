@@ -5,8 +5,7 @@
 	if(isset($_POST['submit'])){
 		if(empty($_POST['username'])){
 			$error = 'Invalid Credentials. Please try again.';
-		}
-		else {
+		} else {
 			//define the username and pass for the session
 			$username = $_POST['username'];
 			$password = $_POST['password'];
@@ -17,8 +16,16 @@
 			//define parameter array for query
 			$authParam = array($username, $password);
 			//using sqlsrv_query to define query treats user input as string and prevents sql injection
-			$authExec = sqlsrv_query($connect, $authQuery, $authParam)
+			$authExec = sqlsrv_query($connect, $authQuery, $authParam);
 
+			$rows = mysqli_num_rows($authExec);
+			if ($rows === 1) {
+				$_SESSION['adminLogin']=$username;
+				header("location: dashboard.php");
+			} else {
+				$error = "Invalid Credentials. Please try again."
+			}
+			mysqli_close($connect);
 		}
 	}
 ?>
