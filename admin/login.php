@@ -1,29 +1,37 @@
 <?php
+	include("/home/walle/public_html/siam/resources/config.php");
 	session_start();
-	$error = '' //declare a variable to use for error messaging
+	$error = ''; //declare a variable to use for error messaging
 
-	if(isset($_POST['submit'])){
-		if(empty($_POST['username'])){
+	if($_SERVER["REQUEST_METHOD"] == "POST"){
+		if(empty($_POST['username']) || empty($_POST['password'])) {
 			$error = 'Invalid Credentials. Please try again.';
 		} else {
 			//define the username and pass for the session
 			$username = $_POST['username'];
-			$password = $_POST['password'];
-			//define database connection variable
-			$connect = mysqli_connect("localhost","walle_siamAdmin","PAd1@VLOBP3R","walle_admins");
-			//define query shell for sqlsrv_query question marks get replaced with values in array
-			$authQuery = "SELECT * FROM admin WHERE password = ? AND username = ?";
-			//define parameter array for query
-			$authParam = array($username, $password);
-			//using sqlsrv_query to define query treats user input as string and prevents sql injection
-			$authExec = sqlsrv_query($connect, $authQuery, $authParam);
+			$password = sha1($_POST['password']);
 
-			$rows = mysqli_num_rows($authExec);
-			if ($rows === 1) {
-				$_SESSION['adminLogin']=$username;
-				header("location: dashboard.php");
-			} else {
-				$error = "Invalid Credentials. Please try again."
+			$check = $admindb->prepare("SELECT username, password FROM user WHERE username=? && password=?");
+
+			$check->bind_param("ss", $username, $password);
+
+			$check->execute();
+
+			$check->bind_result($username, $password);
+
+			$print = $check->fetch();
+
+			$check->close();
+
+			if ($print)
+			{
+    		//redirect to different page for the message
+    		$_SESSION['adminLogin'] = $username;
+     		header('Location: dashboard.php');
+     		exit;
+			}
+			else {
+				$error = "Invalid Credentials. Please try again.";
 			}
 			mysqli_close($connect);
 		}
