@@ -10,13 +10,22 @@
 	<div class="container">
 		<h2>Administrator Login</h2>
 		<form id="login" action="" method="post" class="form-horizontal">
-			<div class="form-group">
+			<?php
+			if ($error) {
+				echo '<div class="form-group has-error"><span id="badLogin" class="help-block"> '.$error.' </span></div>';
+			}
+			?>
+			<div class="row">
+				<div class="form-group col-xs-4">
 					<label for="username">Username: </label>
 					<input type="text" name="username" id="username" value="" class="form-control"/>
+				</div>
 			</div>
-			<div class="form-group">
+			<div class="row">
+				<div class="form-group col-xs-4">
 					<label for="password">Password: </label>
 					<input type="password" name="password" id="password" value="" class="form-control"/>
+				</div>
 			</div>
 			<div class="checkbox">
   			<label>

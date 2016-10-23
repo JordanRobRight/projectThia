@@ -2,7 +2,6 @@
 	include("/home/walle/public_html/siam/resources/config.php");
 	session_start();
 	$error = ''; //declare a variable to use for error messaging
-
 	if($_SERVER["REQUEST_METHOD"] == "POST"){
 		if(empty($_POST['username']) || empty($_POST['password'])) {
 			$error = 'Invalid Credentials. Please try again.';
