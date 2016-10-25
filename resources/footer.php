@@ -10,21 +10,39 @@
 
 		<!-- Latest compiled and minified CSS -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
+<style>
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  background-color: #f5f5f5;
+}
+    .text-muted{
+        text-align: center;
+        padding-top: 20px;
+    }
+</style>
 
 	</head>
 <body>
+ <footer>
+      <div class="container">
+        <p class="text-muted"> &copy; Siam Thai 2016 | Developed by <a id="uwm_sois" href="https://uwm.edu/informationstudies/">UWM SOIS</a></p>
+      </div>
+    </footer>    
 
-<hr>
-
-      <footer>
-        <p><center>Siam Thai | © Company 2016</center></p>
-      </footer>
-
-    </div>
-
-
-<!-- Bootstrap core JavaScript
+    
+    <!-- Bootstrap core JavaScript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
