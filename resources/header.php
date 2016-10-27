@@ -1,12 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
 <head>
-  <title>Siam Thai</title>
   <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <!-- changing this part can break compatibility and responsiveness in older browsers -->
+  
+  <title>Siam Thai</title>
+  
+  <!-- use free cdn to get fast page loads of latest compiled and minified css -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<style>
+		body {
+			padding-top: 50px; /*make space for bootstrap navbar*/
+			margin-bottom: 60px;  /* Margin bottom by footer height */
+		}
+		form {
+			margin: 10px; /*ensure form maintains margins on all screens*/
+		}
+		.btn {
+			margin-top: 15px;
+		}
+		footer {
+			position: absolute;
+			bottom: 0;
+			width: 100%;
+			height: 60px;  /* Set the fixed height of the footer here */
+			background-color: #f5f5f5;
+		}
+    .text-muted{
+        text-align: center;
+        padding-top: 20px;
+    }
+	</style>
 </head>
 <body>
 
