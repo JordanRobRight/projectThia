@@ -1,9 +1,12 @@
 
-		<footer>
-			<div class="container">
-				<p class="text-muted"> &copy; Siam Thai 2016 | Developed by <a id="uwm_sois" href="https://uwm.edu/informationstudies/">UWM SOIS</a></p>
+        <footer>
+           <div class="navbar navbar-default navbar-bottom" role="navigation">
+ <div class="navbar-footer">
+&copy; Siam Thai 2016 | Developed by <a id="uwm_sois" href="https://uwm.edu/informationstudies/">UWM SOIS</a>
 			</div>
-		</footer>    
+            </div>
+		</footer>  
+  
 
     
     <!-- Bootstrap core JavaScript================================================== -->

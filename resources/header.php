@@ -28,6 +28,7 @@
 				width: 100%;
 				height: 60px;  /* Set the fixed height of the footer here */
 				background-color: #f5f5f5;
+                text-align: center;
 			}
 			.text-muted{
 					text-align: center;
