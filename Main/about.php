@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+</html><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
 <head>
@@ -39,23 +39,21 @@ echo $theData;
 	<div id="content">
     <div id="menu">
 	<div id="textabout">
-	  <h2>About Us</h2></p>
-	  <p>SIAM Thai
-Restaurant
-"Eat Good, Be Happy"
-Now is the time to try 
-Siam Thai
+	  <center> <h2>About Us</h2></p>
+	  <p><h2>Siam Thai Restaurant</h2></p>
+     <h3>Eat Good, Be Happy</h3>
+      <p><h3>Now is the time to try Siam Thai</h3>
+      <h3>Dine In - Carry Out - Pick Up - Delivery</h3>
+      <h2>(414) 672-7426</h2>
+      <h2>4819 W National Ave Milwaukee, WI 53214</h2></p></center>
+          
+ 
+               <h2><center>Hours</center></h2>
+               <h2><center>Monday - Saturday : 11 AM - 9PM</center></h2>
+               <h2><center>Sunday: Closed</center></h2>
 
-Dine In - Carry Out - Pick Up - Delivery
 
-(414) 672-7426
-4819 W National Ave Milwaukee, WI 53214
-
-Hours
-Monday - Saturday: 11 AM - 9 PM
-Sunday: Closed
-
-15% Gratuity for parties of 5 or more
+<p>15% Gratuity for parties of 5 or more
 Please inform your server of any food allergies you may have
 $10 minimum for all credit card purchases
 </p>
