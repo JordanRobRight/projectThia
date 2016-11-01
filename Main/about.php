@@ -40,7 +40,25 @@ echo $theData;
     <div id="menu">
 	<div id="textabout">
 	  <h2>About Us</h2></p>
-	  <p>Text here </p>
+	  <p>SIAM Thai
+Restaurant
+"Eat Good, Be Happy"
+Now is the time to try 
+Siam Thai
+
+Dine In - Carry Out - Pick Up - Delivery
+
+(414) 672-7426
+4819 W National Ave Milwaukee, WI 53214
+
+Hours
+Monday - Saturday: 11 AM - 9 PM
+Sunday: Closed
+
+15% Gratuity for parties of 5 or more
+Please inform your server of any food allergies you may have
+$10 minimum for all credit card purchases
+</p>
 	</div>
     </div>  
 	</div>
