@@ -1,27 +1,27 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
 <head>
 
 
 
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<title>Siam Thai</title>
-	<meta http-equiv="Content-Language" content="en-us" />
-	
-	<meta http-equiv="imagetoolbar" content="no" />
-	<meta name="MSSmartTagsPreventParsing" content="true" />
-	
-	<meta name="description" content="Siam Thai" />
-	<meta name="keywords" content="thai, lao, restaurant, milwaukee, authentic" /><meta name="description" content="Description" />
-	
-	<meta name="Lumiere Imagery" content="CONTENT" />
-	<link href="themes/js-image-slider.css" rel="stylesheet" type="text/css" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Siam Thai</title>
+  <meta http-equiv="Content-Language" content="en-us" />
+  
+  <meta http-equiv="imagetoolbar" content="no" />
+  <meta name="MSSmartTagsPreventParsing" content="true" />
+  
+  <meta name="description" content="Siam Thai" />
+  <meta name="keywords" content="thai, lao, restaurant, milwaukee, authentic" /><meta name="description" content="Description" />
+  
+  <meta name="Lumiere Imagery" content="CONTENT" />
+  <link href="themes/js-image-slider.css" rel="stylesheet" type="text/css" />
     <script src="themes/js-image-slider.js" type="text/javascript"></script>
     <link href="generic.css" rel="stylesheet" type="text/css" />
     <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
-	<style type="text/css" media="all">
-	@import "master.css";
+  <style type="text/css" media="all">
+  @import "master.css";
     </style>
     <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
     <script type="text/javascript" src="js/jquery.tinycarousel.min.js"></script>
@@ -67,7 +67,7 @@ $(document).ready(function(){
 <div class="top" id="hboard_home">
 <img src="images/header01.png" width="1362" height="195" alt=""/> </div>
 <div id="main-nav">
-	<?php
+  <?php
 $myFile = "topnav.html";
 $fh = fopen($myFile, 'r');
 $theData = fread($fh, filesize($myFile));
@@ -292,11 +292,11 @@ echo $theData;
 
   <h2>Thai Lemonade $3.00</h2>
  
-  <h2>Coconut Juice $3.00</h2>
+ <p> <h2>Coconut Juice $3.00</h2>
   
   <h2>Canned Soda $1.50</h2>
   
-  <h2>Bottled Water $1.25</h2>
+  <h2>Bottled Water $1.25</h2></p>
   
   <a id="desserts"><h1>Desserts</h1></a>
 
@@ -313,9 +313,9 @@ echo $theData;
 
   <h2>Lychee $3.00</h2>
 </div>
-	
-	<div id="footer">
-	<?php
+  
+  <div id="footer">
+  <?php
 $myFile = "footernav.html";
 $fh = fopen($myFile, 'r');
 $theData = fread($fh, filesize($myFile));
