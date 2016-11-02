@@ -184,7 +184,7 @@ echo $theData;
 
   
 
-  <a id="curries"><h1>Curry</h1></a>
+  <a id="curry"><h1>Curry</h1></a>
 
   <h2>29. Yellow Curry $8.95</h2>
   <p>Kaeng Kari a rich and creamy curry that is sautéed with onion, potatoes, meat, and creamy coconut milk to tone down the overall spiciness of the dish.</p>
