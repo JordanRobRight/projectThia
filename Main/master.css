@@ -72,7 +72,7 @@ position:relative;
 	background-color:#d7090d;
 }
 #menu-nav li{
-	float:none;
+	float:left;
 	text-align: center;
 }
 #menu-nav a:link,a:visited{
