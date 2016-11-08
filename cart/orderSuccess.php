@@ -6,7 +6,7 @@ if(!isset($_REQUEST['id'])){
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Order Success - PHP Shopping Cart Tutorial</title>
+    <title>Order Success</title>
     <meta charset="utf-8">
     <style>
     .container{width: 100%;padding: 50px;}
