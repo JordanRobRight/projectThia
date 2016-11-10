@@ -1,14 +1,14 @@
 
         <footer>
-           <div class="navbar navbar-default navbar-bottom" role="navigation">
- <div class="navbar-footer">
-&copy; Siam Thai 2016 | Developed by <a id="uwm_sois" href="https://uwm.edu/informationstudies/">UWM SOIS</a>
-			</div>
-            </div>
-		</footer>  
-  
+        	<div class="navbar navbar-default navbar-bottom" role="navigation">
+ 					 	<div class="navbar-footer">
+							&copy; Siam Thai 2016 | Developed by <a id="uwm_sois" href="https://uwm.edu/informationstudies/">UWM SOIS</a>
+						</div>
+          </div>
+				</footer>
 
-    
+
+
     <!-- Bootstrap core JavaScript================================================== -->
 		<!-- Placed at the end of the document so the pages load faster -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>

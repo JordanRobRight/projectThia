@@ -6,9 +6,9 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 		<!-- changing this part can break compatibility and responsiveness in older browsers -->
-		
+
 		<title>Siam Thai</title>
-		
+
 		<!-- use free cdn to get fast page loads of latest compiled and minified css -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 		<style>
@@ -23,7 +23,7 @@
 				margin-top: 15px;
 			}
 			footer {
-				position: absolute;
+				position: relative;
 				bottom: 0;
 				width: 100%;
 				height: 60px;  /* Set the fixed height of the footer here */
@@ -37,7 +37,7 @@
 		</style>
 	</head>
 	<body>
-	
+
 	<nav class="navbar navbar-default">
 		<div class="container-fluid">
 			<div class="navbar-header">
@@ -63,5 +63,3 @@
 			</div>
 		</div>
 	</nav>
-
-
