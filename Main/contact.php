@@ -1,21 +1,22 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
 <head>
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<title>Siam Thai</title>
-	<meta http-equiv="Content-Language" content="en-us" />
-	
-	<meta http-equiv="imagetoolbar" content="no" />
-	<meta name="MSSmartTagsPreventParsing" content="true" />
-	
-	<meta name="description" content="Siam Thai" />
-	<meta name="keywords" content="thai, lao, restaurant, milwaukee, authentic" /><meta name="description" content="Description" />
-	
-	<meta name="Lumiere Imagery" content="CONTENT" />
-	<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
-	<style type="text/css" media="all">
-	@import "master.css";
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Siam Thai</title>
+  <meta http-equiv="Content-Language" content="en-us" />
+  
+  <meta http-equiv="imagetoolbar" content="no" />
+  <meta name="MSSmartTagsPreventParsing" content="true" />
+  
+  <meta name="description" content="Siam Thai" />
+  <meta name="keywords" content="thai, lao, restaurant, milwaukee, authentic" /><meta name="description" content="Description" />
+  
+  <meta name="Lumiere Imagery" content="CONTENT" />
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  <style type="text/css" media="all">
+  @import "master.css";
     </style>
     
 </head>
@@ -24,7 +25,7 @@
 <div class="top" id="hboard_home">
 <img src="images/header01.png" width="1362" height="195" alt=""/> </div>
 <div id="main-nav">
-	<?php
+  <?php
 $myFile = "topnav.html";
 $fh = fopen($myFile, 'r');
 $theData = fread($fh, filesize($myFile));
@@ -40,40 +41,40 @@ echo $theData;
 <div id="page-container">
 
 <div id="header"></div>
-	</div>
+  </div>
 <div id="content" class="padding">
 <div id="hours">
     <p class="center"><b>Hours</b></p>
     <table border="0" cellspacing="1" cellpadding="1">
-    	  <tr>
-    	    <td class="day">Sunday:</td>
-    	    <td class="time">Closed</td>
-  	    </tr>
-    	  <tr>
-    	    <td class="day">Monday:</td>
-    	    <td class="time">11am - 9pm</td>
-  	    </tr>
-    	  <tr>
-    	    <td class="day">Tuesday:</td>
-    	    <td class="time">11am - 9pm</td>
-  	    </tr>
-    	  <tr>
-    	    <td class="day">Wednesday:</td>
-    	    <td class="time">11am - 9pm</td>
-  	    </tr>
-    	  <tr>
-    	    <td class="day">Thursday:</td>
-    	    <td class="time">11am - 9pm</td>
-  	    </tr>
-    	  <tr>
-    	    <td class="day">Friday:</td>
-    	    <td class="time">11am - 9pm</td>
-  	    </tr>
-    	  <tr>
-    	    <td class="day">Saturday:</td>
-    	    <td class="time">11am - 9pm</td>
-  	    </tr>
-  	  </table>
+        <tr>
+          <td class="day">Sunday:</td>
+          <td class="time">Closed</td>
+        </tr>
+        <tr>
+          <td class="day">Monday:</td>
+          <td class="time">11am - 9pm</td>
+        </tr>
+        <tr>
+          <td class="day">Tuesday:</td>
+          <td class="time">11am - 9pm</td>
+        </tr>
+        <tr>
+          <td class="day">Wednesday:</td>
+          <td class="time">11am - 9pm</td>
+        </tr>
+        <tr>
+          <td class="day">Thursday:</td>
+          <td class="time">11am - 9pm</td>
+        </tr>
+        <tr>
+          <td class="day">Friday:</td>
+          <td class="time">11am - 9pm</td>
+        </tr>
+        <tr>
+          <td class="day">Saturday:</td>
+          <td class="time">11am - 9pm</td>
+        </tr>
+      </table>
   </div>
 <div id="text">
       <div id="info">
@@ -84,9 +85,9 @@ echo $theData;
         <p> Email:<br />
         siamThai@gmail.com </a></p>
       </div>
-       <center>
-         <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11668.134920064971!2d-87.97424!3d43.0196772!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x7cc0a4b45132f4cf!2sSiam+Express!5e0!3m2!1sen!2sus!4v1467227760481" width="30%" height="30%" frameborder="0" style="border:0" allowfullscreen></iframe>
-       </center>
+       <div id="map">
+         <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11668.134920064971!2d-87.97424!3d43.0196772!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x7cc0a4b45132f4cf!2sSiam+Express!5e0!3m2!1sen!2sus!4v1467227760481" width="60%" height="100%"  frameborder="0" style="border:0" allowfullscreen></iframe>
+       </div>
 </div>
 </div>
 <div id="footer"><?php

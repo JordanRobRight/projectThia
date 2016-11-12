@@ -147,12 +147,19 @@ position:relative;
 	text-align: left;
 	padding-left:5px;
 }
+
+
 #info {
-	float:right;
+	float:left;
 	width:200px;
 	padding:30px;
 	font-weight: 500;
 	font-size: 1.3em;
+}
+
+#map{
+	width:50%;
+	height:350px;
 }
 
 #textabout {
@@ -224,6 +231,11 @@ body{
 	float: none;
 }
 
+#center{
+	height:auto;
+}
+
+
 #main-nav ul{ 
 	list-style-type:none;
 	padding-left:100px;
@@ -277,7 +289,7 @@ body{
 }
 }
 
-@media only screen and (min-width:10px) and (max-width: 500px){
+@media only screen{
 	/*mobile*/
 body{
 	
@@ -287,6 +299,8 @@ body{
 
 	width: 100%;
 }
+
+
 #text{
 
 	float: none;
@@ -311,7 +325,8 @@ body{
 } 
 
 #textabout{
-	width: auto;
+	width: 27%;
+	padding:0px;
 	margin: auto;
 	float:left;
 }
