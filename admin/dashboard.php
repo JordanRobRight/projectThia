@@ -1,7 +1,7 @@
 <?php
+	include("/home/walle/public_html/siam/admin/adminauth.php");  //adminauth has to be included first, so session_start() function is at top of final script
  	include("/home/walle/public_html/siam/resources/config.php");
-	include("/home/walle/public_html/siam/resources/publicmenudb.php")
-	include("/home/walle/public_html/siam/admin/adminauth.php");
+	include("/home/walle/public_html/siam/resources/publicmenudb.php");
 	include("/home/walle/public_html/siam/resources/header.php");
 
 ?>
@@ -75,7 +75,7 @@
 			<table class="table table-bordered table-condensed table-hover">
 
 				<?php
-				$items = mysqli_query($conn, "select * from items");
+				$items = mysqli_query($conn, "select * from Items");
 
 				if ($items) {
 					echo'<tr>
@@ -92,13 +92,13 @@
 					$i = 1;
 					while ($row = mysqli_fetch_array($items, MYSQLI_ASSOC)) {
 						$item = $row['item_name'];
-						if (!empty$row['s_price']){
+						if (!empty($row['s_price'])){
 							$price = $row['s_price'];
-							$lprice = null;
+							$lprice = $row['l_price'];
 							$sizes = 'S/L';
 						} else {
 							$price = $row['price'];
-							$lprice = $row['l_price'];
+							$lprice = 'n/a';
 							$sizes = 'One Size';
 						}
 						$desc = $row['item_description'];
