@@ -1,3 +1,10 @@
+<?php
+
+if (isset($_SESSION['adminLogin'])) {
+	$admin = true;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en-US">
 	<head>
@@ -6,9 +13,13 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 		<!-- changing this part can break compatibility and responsiveness in older browsers -->
-
-		<title>Siam Thai</title>
-
+		<?php
+		if ($admin) {
+			echo '<title>Siam Thai - Administrator</title>';
+		} else {
+			echo '<title>Siam Thai</title>';
+		}
+		?>
 		<!-- use free cdn to get fast page loads of latest compiled and minified css -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 		<style>
@@ -57,8 +68,14 @@
 					<li><a href="#">Chart</a></li>
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
-					<li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-					<li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+					<?php
+					if ($admin) {
+						echo '<li><a href="http://wall-e.uwmsois.com/siam/admin/logout.php"><span class="glyphicon glyphicon-log-out"></span> Log Out</a></li>';
+					} else {
+						echo '<li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>';
+						echo '<li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>';
+					}
+					 ?>
 				</ul>
 			</div>
 		</div>

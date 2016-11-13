@@ -1,5 +1,6 @@
 <?php
  	include("/home/walle/public_html/siam/resources/config.php");
+	include("/home/walle/public_html/siam/resources/publicmenudb.php")
 	include("/home/walle/public_html/siam/admin/adminauth.php");
 	include("/home/walle/public_html/siam/resources/header.php");
 
@@ -72,36 +73,54 @@
 				</ul>
 			</nav>
 			<table class="table table-bordered table-condensed table-hover">
-				<tr>
-					<th>ID</th>
-					<th>Menu Item</th>
-					<th>Size</th>
-					<th>Price</th>
-					<th>Description</th>
-					<th>Category</th>
-					<th>Protein</th>
-					<th>Actions</th>
-				</tr>
-				<tr>
-					<td>1</td>
-					<td>Placeholder Chicken</td>
-					<td>Large</td>
-					<td>$11.25</td>
-					<td>Some kind of chicken and soy sauce concoction that is no where near as good as the real stuff</td>
-					<td>Entree</td>
-					<td>Chicken</td>
-					<td><a href="#">Edit</a></td>
-				</tr>
-				<tr>
-					<td>2</td>
-					<td>Placeholder Tofu Soup</td>
-					<td>N/A</td>
-					<td>$4.50</td>
-					<td>Tofu, vegetables, and broth, can't really screw it up</td>
-					<td>Soup</td>
-					<td>Tofu</td>
-					<td><a href="#">Edit</a></td>
-				</tr>
+
+				<?php
+				$items = mysqli_query($conn, "select * from items");
+
+				if ($items) {
+					echo'<tr>
+						<th>ID</th>
+						<th>Menu Item</th>
+						<th>Sizes</th>
+						<th>Price</th>
+						<th>Large Price</th>
+						<th>Description</th>
+						<th>Category</th>
+						<th>Protein</th>
+						<th>Actions</th>
+					</tr>';
+					$i = 1;
+					while ($row = mysqli_fetch_array($items, MYSQLI_ASSOC)) {
+						$item = $row['item_name'];
+						if (!empty$row['s_price']){
+							$price = $row['s_price'];
+							$lprice = null;
+							$sizes = 'S/L';
+						} else {
+							$price = $row['price'];
+							$lprice = $row['l_price'];
+							$sizes = 'One Size';
+						}
+						$desc = $row['item_description'];
+						$cat = $row['category'];
+						$meat = $row['protein'];
+
+						echo
+						'<tr>
+							<td>'.$i.'</td>
+							<td>'.$item.'</td>
+							<td>'.$sizes.'</td>
+							<td>'.$price.'</td>
+							<td>'.$lprice.'</td>
+							<td>'.$desc.'</td>
+							<td>'.$cat.'</td>
+							<td>'.$protein.'</td>
+							<td><a href="#">Edit</a></td>
+						</tr>';
+						$i++;
+					}
+				}
+				?>
 			</table>
 		</div>
 	</div>
