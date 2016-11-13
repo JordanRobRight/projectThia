@@ -2,6 +2,7 @@
 	require("/home/walle/public_html/siam/admin/adminauth.php");  //adminauth has to be included first, so session_start() function is at top of final script
  	include("/home/walle/public_html/siam/resources/config.php");  //poorly designed currently. config.php has credentials for admin db, probably not needed on this page
 	include("/home/walle/public_html/siam/resources/publicmenudb.php");  //still poorly designed, I just created a new connection to access menu db
+	include("/home/walle/public_html/siam/admin/create-item.php");
 	include("/home/walle/public_html/siam/resources/header.php");
 ?>
 
@@ -46,18 +47,34 @@
 				<div class="form-group">
 					<label for="protein">Protein: </label>
 					<select class="form-control" name="protein">
-						<option>Select</option>
-						<option>Beef</option>
-						<option>Chicken</option>
-						<option>Pork</option>
-						<option>Shrimp</option>
-						<option>Tofu</option>
-						<option>Vegetable</option>
+						<option selected value="">Select</option>
+						<option value="Beef">Beef</option>
+						<option value="Chicken">Chicken</option>
+						<option value="Pork">Pork</option>
+						<option value="Shrimp">Shrimp</option>
+						<option value="Tofu">Tofu</option>
+						<option value="Vegetable">Vegetable</option>
+						<option value="Multiple">Multiple</option>
 					</select>
-					<span id="helpBlock2" class="help-block">Maybe not a dropdown, either text box or multipicker of some kind?</span>
+				</div>
+				<div class="form-group">
+					<label for="category">Category: </label>
+					<select class="form-control" name="category">
+						<option selected value="">Select</option>
+						<option value="apps">Appetizer</option>
+						<option value="noodle">Noodle Soup</option>
+						<option value="soup">Soup</option>
+						<option value="salad">Salad</option>
+						<option value="curry">Curry</option>
+						<option value="stirfry">Stir-Fry</option>
+						<option value="entree">Entree</option>
+						<option value="friedrice">Fried Rice</option>
+						<option value="beverage">Beverage</option>
+						<option value="dessert">Dessert</option>
+					</select>
 				</div>
 
-				<button type="submit" class="btn btn-large btn-success" href="#">New Item</button>
+				<button type="submit" class="btn btn-large btn-success" href="#">Submit New Item</button>
 			</form>
 		</div>
 		<div class="col-md-8"> <!--display existing entries at half screen width-->

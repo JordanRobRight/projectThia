@@ -92,9 +92,3 @@ body{
 	height: auto;
 }
 }
-
-/*hide small-large in dashboard by default, they will be shown with JS if radio is changed*/
-
-.small-large {
-	visibility:hidden;
-}
