@@ -21,12 +21,14 @@ if (isset($_SESSION['adminLogin'])) {
 		}
 		?>
 		<!-- use free cdn to get fast page loads of latest compiled and minified css -->
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
 		<style>
-			body {
-				padding-top: 50px; /*make space for bootstrap navbar*/
-				margin-bottom: 60px;  /* Margin bottom by footer height */
-			}
+		/*make space for bootstrap navbar if using fixed nav*/
+		/* Margin bottom by footer height*/
+			/*body {
+				padding-top: 50px;
+				margin-bottom: 60px;
+			}*/
 			form {
 				margin: 10px; /*ensure form maintains margins on all screens*/
 			}
