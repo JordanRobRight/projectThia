@@ -23,6 +23,7 @@ include 'dbConfig.php';
     </style>
 </head>
 <body>
+<div class="jumbotron jumbotron-header"></div>
 <!-- Navigation -->
     <nav class="navbar navbar-default">
         <div class="container">
