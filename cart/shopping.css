@@ -1,6 +1,4 @@
-body{
-  color: blue;
-}
+
 .jumbotron-header{
     background-image: url(header.jpg);
     background-size: cover;
@@ -42,7 +40,7 @@ body{
   width: 100%;
 }
 
-    p{color: #34a853;font-size: 18px;}
+    p{font-size: 18px;}
 
 }
 .thumbnail {
@@ -62,5 +60,5 @@ body{
     font-family: verdana;
     color:orange;
   }
-}
-\
+
+

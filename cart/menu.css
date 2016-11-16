@@ -1,0 +1,20 @@
+
+.jumbotron-header{
+    background-image: url(header.jpg);
+    background-size: cover;
+    height: 300px;
+    margin-bottom: 0;
+}
+
+.thumbnail {
+  
+  padding: 4px;
+  margin-bottom: 20px;
+  height:200px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  -webkit-transition: border .2s ease-in-out;
+  -o-transition: border .2s ease-in-out;
+  transition: border .2s ease-in-out;
+}
