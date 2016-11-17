@@ -6,9 +6,9 @@
 		## define variables to hold post values and sanitize input
 		$iname = trim(strtoupper(filter_var($_POST['itemName'],FILTER_SANITIZE_STRING)));
 		$idesc = trim(strtoupper(filter_var($_POST['itemDesc'],FILTER_SANITIZE_STRING)));
-		$price = trim(strtoupper(filter_var($_POST['price'],FILTER_SANITIZE_STRING)));
-		$sprice = trim(strtoupper(filter_var($_POST['sprice'],FILTER_SANITIZE_STRING)));
-		$lprice = trim(strtoupper(filter_var($_POST['lprice'],FILTER_SANITIZE_STRING)));
+		$price = trim(strtoupper(filter_var($_POST['price'],FILTER_SANITIZE_NUMBER_INT)));
+		$sprice = trim(strtoupper(filter_var($_POST['sprice'],FILTER_SANITIZE_NUMBER_INT)));
+		$lprice = trim(strtoupper(filter_var($_POST['lprice'],FILTER_SANITIZE_NUMBER_INT)));
 		$cat = trim(strtoupper(filter_var($_POST['category'],FILTER_SANITIZE_STRING)));
 		$protein = trim(strtoupper(filter_var($_POST['protein'],FILTER_SANITIZE_STRING)));
 

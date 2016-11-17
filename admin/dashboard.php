@@ -8,12 +8,10 @@
 
 
 <div class="container-fluid">
-	<!-- On medium and larger screens, row puts new item and menu display on one line. Form will take up 1/3 of screen width and menu display remaining two thirds-->
 	<div class="row">
-		<!-- Set column width -->
 		<div class="col-md-4">
+			<!--  Begin form for adding a menu item  -->
 			<h2>Add New Menu Item</h2>
-			<!-- Begin new menu form -->
 			<form id="addItem" method="POST" action="dashboard.php">
 				<div class="form-group">
 					<label for="itemName">Item Name:</label>
@@ -73,39 +71,58 @@
 						<option value="dessert">Dessert</option>
 					</select>
 				</div>
-
 				<button type="submit" class="btn btn-large btn-success" href="#">Submit New Item</button>
 			</form>
 		</div>
-		<div class="col-md-8"> <!--display existing entries at half screen width-->
-			<h2>View Menu Items</h2><nav aria-label="Page navigation"> <!--this will be php loop generated later based on number of results using modulus operator to limit number of items per page and calculate pages -->
-				<ul class="pagination">
-					<li>
-						<a href="#" aria-label="Previous">
-							<span aria-hidden="true">&laquo;</span>
-						</a>
-					</li>
-					<li><a href="#">1</a></li>
-					<li><a href="#">2</a></li>
-					<li><a href="#">3</a></li>
-					<li><a href="#">4</a></li>
-					<li><a href="#">5</a></li>
-					<li>
-						<a href="#" aria-label="Next">
-							<span aria-hidden="true">&raquo;</span>
-						</a>
-					</li>
-				</ul>
-			</nav>
+		<!-- end of new menu item form -->
+
+
+		<div class="col-md-8">
+			<!--  Begin table to display current menu items  -->
+			<h2>View Menu Items</h2>
+			<?php
+			$display = 10;
+
+			if (isset($_GET['p']) && is_numeric($_GET['p'])) {				//if $get p is set that is the current page if not, we're starting at page 1
+				$curpg = filter_var($_GET['p'],FILTER_SANITIZE_NUMBER_INT);
+
+				if ($curpg > 150) {																			//prevent someone from editing the uri to put unreasonable values.
+					echo '<div class="alert alert-danger">'.							//this statement will break the dashboard page if more than 1500 items exist in menu DB
+					'The requested page does not exist.
+					</div>';
+					exit();
+				}
+			} else {
+				$curpg = 1;
+			}
+
+			$q = "SELECT COUNT(*) FROM Items";						//calculate the number of pages and offset value
+			$r = @mysqli_query($conn, $q);
+			$ret = @mysqli_fetch_array($r, MYSQLI_NUM);
+			$count = $ret[0];
+			if ($count > $display) {
+				$numpgs = ceil($count/$display);
+				$offset = ($curpg - 1) * $display;
+			} else {
+				$numpgs = 1;
+				$offset = 0;
+			}
+			$prev = '';
+			$next = '';
+			if ($curpg == 1) {														//set variable to inactivate next or previous buttons if on first or last page
+				$prev = ' class="disabled"';
+			} else if ($curpg == $numpgs) {
+				$next = ' class="disabled"';
+			}
+			?>
 			<table class="table table-bordered table-condensed table-hover">
 
 				<?php
 
-				$items = mysqli_query($conn, "select * from Items");
+				$items = mysqli_query($conn, "select * from Items ORDER BY category, item_name LIMIT $offset, $display");
 
 				if ($items) {
 					echo'<tr>
-						<th>ID</th>
 						<th>Menu Item</th>
 						<th>Sizes</th>
 						<th>Price</th>
@@ -118,7 +135,7 @@
 					$i = 1;
 					while ($row = mysqli_fetch_array($items, MYSQLI_ASSOC)) {
 						$item = $row['item_name'];
-						if (!empty($row['s_price'])){
+						if (!empty($row['s_price']) && $row['s_price'] != 0){					//some manually inserted menu items have s_price = NULL and those passed from UI get set to 0.00
 							$price = $row['s_price'];
 							$lprice = $row['l_price'];
 							$sizes = 'S/L';
@@ -133,7 +150,6 @@
 
 						echo
 						'<tr>
-							<td>'.$i.'</td>
 							<td>'.$item.'</td>
 							<td>'.$sizes.'</td>
 							<td>'.$price.'</td>
@@ -141,13 +157,43 @@
 							<td>'.$desc.'</td>
 							<td>'.$cat.'</td>
 							<td>'.$protein.'</td>
-							<td><a class="btn btn-small btn-block btn-warning" href="#">Edit</a><a class="btn btn-small btn-block btn-danger" href="#">Delete</a></td>
+							<td>
+								<div class="btn-group">
+									<button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Actions <span class="caret"></span></button>
+									<ul class="dropdown-menu">
+										<li><a href="#">Edit Item</a></li>
+										<li role="separator" class="divider"></li>
+										<li><a href="#">Delete Item</a></li>
+									</ul>
+								</div>
+							</td>
 						</tr>';
 						$i++;
 					}
 				}
 				?>
 			</table>
+			<?php 							//display pagination
+			if ($numpgs > 1) {
+				echo '<nav aria-label="Page navigation">
+					<ul class="pagination">
+						<li '.$prev.'>
+							<a href="dashboard.php?p='.($curpg-1).'" aria-label="Previous">
+								<span aria-hidden="true">&laquo;</span>
+							</a>
+						</li>';
+						for ($i=1; $i <= $numpgs; $i++){
+							echo '<li><a href="dashboard.php?p='.$i.'">'.$i.'</a></li>';
+						}
+						echo '<li'.$next.'>
+							<a href="dashboard.php?p='.($curpg+1).'" aria-label="Next">
+								<span aria-hidden="true">&raquo;</span>
+							</a>
+						</li>
+					</ul>
+				</nav>';
+			} ?>
+			<!--  End current menu item table  -->
 		</div>
 	</div>
 </div>
