@@ -8,10 +8,20 @@ function priceViz() {
 	}
 }
 
+function delConfirm() {
+	return confirm('Are you sure you want to delete this item? The cannot operation cannot be undone.');
+}
+
 $(document).ready(function(){
 	priceViz();
 	$('input[name=priceSel]').click(function() {
 		priceViz();
 	});
+
+	$('#reset').click(function() {
+		$('.resettable').attr('value',' ');
+		$('.resettable').text('');
+		$('.ddreset').attr('selected','false');
+	})
 
 });

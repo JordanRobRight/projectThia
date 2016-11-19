@@ -14,7 +14,7 @@
 		$sprice = $_POST['sprice'];
 		$lprice = $_POST['lprice'];
 		$cat = strtoupper($_POST['category']);
-		$protein = strtoupper($_POST['protein']);
+		$prot = strtoupper($_POST['protein']);
 
 		if ($_POST['priceSel'] == 'os') {
 			$sprice = null;

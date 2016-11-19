@@ -5,7 +5,15 @@
 	include("create-item.php");
 	include("../resources/header.php");
 	include("edit-query.php");
+	include("delete-action.php");
 
+
+
+	if ($error) {
+			echo "<div class=\"alert alert-danger\">$error</div>";
+	} else if ($success) {
+			echo "<div class=\"alert alert-success\">$success</div>";
+		}
 ?>
 
 
@@ -18,63 +26,64 @@
 				<input name="id" type="hidden"<?php if (!empty($eid)){echo ' value="'.$eid.'"';}?>>
 				<div class="form-group">
 					<label for="itemName">Item Name:</label>
-					<input type="text" class="form-control" id="itemName" name="itemName"<?php if (!empty($ename)){echo ' value="'.$ename.'"';}?>/>
+					<input type="text" class="form-control resettable" id="itemName" name="itemName"<?php if (!empty($iname)){echo ' value="'.$iname.'"';}?>/>
 				</div>
 				<div class="form-group">
 					<label for="itemDesc">Description:</label>
-					<textarea class="form-control" id="itemDesc" name="itemDesc" rows="3"><?php if (!empty($edesc)){echo $edesc;}?></textarea>
+					<textarea class="form-control resettable" id="itemDesc" name="itemDesc" rows="3"><?php if (!empty($idesc)){echo $idesc;}?></textarea>
 				</div>
 				<div class="form-group">
 					<label>Available Sizes:</label>
 					<label class="radio-inline">
-						<input type="radio" id="smallLarge" name="priceSel" value="sl"<?php if (!empty($elprice) && $elprice != 0){echo ' checked';}?>> Small/Large
+						<input type="radio" id="smallLarge" name="priceSel" value="sl"<?php if (!empty($lprice) && $lprice != 0){echo ' checked';}?>> Small/Large
 					</label>
 					<label class="radio-inline">
-						<input type="radio" id="oneSize" name="priceSel" value="os"<?php if (empty($elprice) || $elprice == 0){echo ' checked';}?>> One Size
+						<input type="radio" id="oneSize" name="priceSel" value="os"<?php if (empty($lprice) || $lprice == 0){echo ' checked';}?>> One Size
 					</label>
 				</div>
 				<div class="form-group" id="one-size">
 					<label for="price">Price:</label> <!-- we'll need multiple price options if multiple sizes are selected -->
-					<input type="text" class="form-control" id="price" name="price"<?php if (empty($elprice) || $elprice == 0){echo ' value="'.$eprice.'"';}?>/>
+					<input type="text" class="form-control resettable" id="price" name="price"<?php if (empty($lprice) || $lprice == 0){echo ' value="'.$price.'"';}?>/>
 				</div>
 				<div class="form-group small-large">
 					<label for="sprice">Size Small Price:</label> <!-- we'll need multiple price options if multiple sizes are selected -->
-					<input type="text" class="form-control" id="sprice" name="sprice"<?php if (!empty($elprice) && $elprice != 0){echo ' value="'.$esprice.'"';}?>/>
+					<input type="text" class="form-control resettable" id="sprice" name="sprice"<?php if (!empty($lprice) && $lprice != 0){echo ' value="'.$sprice.'"';}?>/>
 				</div>
 				<div class="form-group small-large">
 					<label for="lprice">Size Large Price:</label> <!-- we'll need multiple price options if multiple sizes are selected -->
-					<input type="text" class="form-control" id="lprice" name="lprice"<?php if (!empty($elprice) && $elprice != 0){echo ' value="'.$elprice.'"';}?>/>
+					<input type="text" class="form-control resettable" id="lprice" name="lprice"<?php if (!empty($lprice) && $lprice != 0){echo ' value="'.$lprice.'"';}?>/>
 				</div>
 				<div class="form-group">
 					<label for="protein">Protein: </label>
-					<select class="form-control" name="protein">
-						<option <?php if (empty($eprot)) { echo 'selected ';}?>value="">Select</option>
-						<option <?php if (!empty($eprot) && $eprot == 'beef') {echo 'selected ';}?>value="Beef">Beef</option>
-						<option <?php if (!empty($eprot) && $eprot == 'chicken') {echo 'selected ';}?>value="Chicken">Chicken</option>
-						<option <?php if (!empty($eprot) && $eprot == 'pork') {echo 'selected ';}?>value="Pork">Pork</option>
-						<option <?php if (!empty($eprot) && $eprot == 'shrimp') {echo 'selected ';}?>value="Shrimp">Shrimp</option>
-						<option <?php if (!empty($eprot) && $eprot == 'tofu') {echo 'selected ';}?>value="Tofu">Tofu</option>
-						<option <?php if (!empty($eprot) && $eprot == 'vegetable') {echo 'selected ';}?>value="Vegetable">Vegetable</option>
-						<option <?php if (!empty($eprot) && $eprot == 'multiple') {echo 'selected ';}?>value="Multiple">Multiple</option>
+					<select class="form-control ddreset" name="protein">
+						<option <?php if (empty($prot)) { echo 'selected ';}?>value="">Select</option>
+						<option <?php if (!empty($prot) && $prot == 'BEEF') {echo 'selected ';}?>value="Beef">Beef</option>
+						<option <?php if (!empty($prot) && $prot == 'CHICKEN') {echo 'selected ';}?>value="Chicken">Chicken</option>
+						<option <?php if (!empty($prot) && $prot == 'PORK') {echo 'selected ';}?>value="Pork">Pork</option>
+						<option <?php if (!empty($prot) && $prot == 'SHRIMP') {echo 'selected ';}?>value="Shrimp">Shrimp</option>
+						<option <?php if (!empty($prot) && $prot == 'TOFU') {echo 'selected ';}?>value="Tofu">Tofu</option>
+						<option <?php if (!empty($prot) && $prot == 'VEGETABLE') {echo 'selected ';}?>value="Vegetable">Vegetable</option>
+						<option <?php if (!empty($prot) && $prot == 'MULTIPLE') {echo 'selected ';}?>value="Multiple">Multiple</option>
 					</select>
 				</div>
 				<div class="form-group">
 					<label for="category">Category: </label>
-					<select class="form-control" name="category">
-						<option <?php if (empty($ecat)) { echo 'selected ';}?>selected value="">Select</option>
-						<option <?php if (!empty($ecat) && $ecat == 'appetizer') {echo 'selected ';}?>value="appetizer">Appetizer</option>
-						<option <?php if (!empty($ecat) && $ecat == 'noodlesoup') {echo 'selected ';}?>value="noodlesoup">Noodle Soup</option>
-						<option <?php if (!empty($ecat) && $ecat == 'soup') {echo 'selected ';}?>value="soup">Soup</option>
-						<option <?php if (!empty($ecat) && $ecat == 'salad') {echo 'selected ';}?>value="salad">Salad</option>
-						<option <?php if (!empty($ecat) && $ecat == 'curry') {echo 'selected ';}?>value="curry">Curry</option>
-						<option <?php if (!empty($ecat) && $ecat == 'stirfry') {echo 'selected ';}?>value="stirfry">Stir-Fry</option>
-						<option <?php if (!empty($ecat) && $ecat == 'entree') {echo 'selected ';}?>value="entree">Entree</option>
-						<option <?php if (!empty($ecat) && $ecat == 'friedrice') {echo 'selected ';}?>value="friedrice">Fried Rice</option>
-						<option <?php if (!empty($ecat) && $ecat == 'beverage') {echo 'selected ';}?>value="beverage">Beverage</option>
-						<option <?php if (!empty($ecat) && $ecat == 'dessert') {echo 'selected ';}?>value="dessert">Dessert</option>
+					<select class="form-control ddreset" name="category">
+						<option <?php if (empty($cat)) { echo 'selected ';}?>selected value="">Select</option>
+						<option <?php if (!empty($cat) && $cat == 'APPETIZER') {echo 'selected ';}?>value="appetizer">Appetizer</option>
+						<option <?php if (!empty($cat) && $cat == 'NOODLESOUP') {echo 'selected ';}?>value="noodlesoup">Noodle Soup</option>
+						<option <?php if (!empty($cat) && $cat == 'SOUP') {echo 'selected ';}?>value="soup">Soup</option>
+						<option <?php if (!empty($cat) && $cat == 'SALAD') {echo 'selected ';}?>value="salad">Salad</option>
+						<option <?php if (!empty($cat) && $cat == 'CURRY') {echo 'selected ';}?>value="curry">Curry</option>
+						<option <?php if (!empty($cat) && $cat == 'STIRFRY') {echo 'selected ';}?>value="stirfry">Stir-Fry</option>
+						<option <?php if (!empty($cat) && $cat == 'ENTREE') {echo 'selected ';}?>value="entree">Entree</option>
+						<option <?php if (!empty($cat) && $cat == 'FRIEDRICE') {echo 'selected ';}?>value="friedrice">Fried Rice</option>
+						<option <?php if (!empty($cat) && $cat == 'BEVERAGE') {echo 'selected ';}?>value="beverage">Beverage</option>
+						<option <?php if (!empty($cat) && $cat == 'DESSERT') {echo 'selected ';}?>value="dessert">Dessert</option>
 					</select>
 				</div>
 				<button type="submit" class="btn btn-large btn-success"><?php if ($edit) {echo 'Submit Changes';} else {echo 'Submit New Item';}?></button>
+				<button type="reset" class="btn btn-large btn-danger pull-right" id="reset">Reset Form</button>
 			</form>
 		</div>
 		<!-- end of new menu item form -->
@@ -164,9 +173,9 @@
 								<div class="btn-group">
 									<button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Actions <span class="caret"></span></button>
 									<ul class="dropdown-menu">
-										<li><a href="dashboard.php?e=t&id='.$iid.'" alt="edit item">Edit Item</a></li>
+										<li><a href="dashboard.php?e=t&eid='.$iid.'" alt="edit item">Edit Item</a></li>
 										<li role="separator" class="divider"></li>
-										<li><a href="dashboard.php?d=t&id='.$iid.'" alt="delete item">Delete Item</a></li>
+										<li><a href="dashboard.php?d=t&did='.$iid.'" alt="delete item" class="deleteButton" id="del'.$iid.'" onclick="return delConfirm()">Delete Item</a></li>
 									</ul>
 								</div>
 							</td>
