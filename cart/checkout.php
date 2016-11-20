@@ -60,7 +60,6 @@ $custRow = $query->fetch_assoc();
         </div>
     </nav>
 
-<body>
 <div class="container">
 <div class="col-lg-12 col-md-8 col-sm-10">
     <h1>Order Preview</h1>
@@ -104,5 +103,6 @@ $custRow = $query->fetch_assoc();
         <a href="cartAction.php?action=placeOrder" class="btn btn-success orderBtn">Place Order <i class="glyphicon"></i></a>
     </div>
 </div>
+    </div>
 </body>
 </html>
