@@ -16,8 +16,8 @@ $cart = new Cart;
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script>
-    function updateCartItem(obj,id){
-        $.get("cartAction.php", {action:"updateCartItem", id:id, qty:obj.value}, function(data){
+    function updateCartItem(obj,item_id){
+        $.get("cartAction.php", {action:"updateCartItem", item_id:item_id, qty:obj.value}, function(data){
             if(data == 'ok'){
                 location.reload();
             }else{
@@ -26,6 +26,7 @@ $cart = new Cart;
         });
     }
     </script>
+
 </head>
 <body>
 <!-- Header Image -->
@@ -56,14 +57,14 @@ $cart = new Cart;
  
 <div class="container">
     <h1>Shopping Cart</h1>
-    <table class="table">
+    <table id="cart" class="table table-hover table-condensed">
     <thead>
         <tr>
-            <th>Product</th>
-            <th>Price</th>
-            <th>Quantity</th>
-            <th>Subtotal</th>
-            <th>&nbsp;</th>
+            <th style="width: 50%">Product</th>
+            <th style="width:10%">Price</th>
+            <th style="width: 8%">Quantity</th>
+            <th style="width: 22%">Subtotal</th>
+            <th style="width: 10%">&nbsp;</th>
         </tr>
     </thead>
     <tbody>
@@ -74,12 +75,12 @@ $cart = new Cart;
             foreach($cartItems as $item){
         ?>
         <tr>
-            <td><?php echo $item["name"]; ?></td>
-            <td><?php echo '$'.$item["price"].' USD'; ?></td>
-            <td><input type="number" class="form-control text-center" value="<?php echo $item["qty"]; ?>" onchange="updateCartItem(this, '<?php echo $item["rowid"]; ?>')"></td>
-            <td><?php echo '$'.$item["subtotal"].' USD'; ?></td>
+            <td data-th="Item"><?php echo $item["item_name"]; ?></td>
+            <td data-th="Price"><?php echo '$'.$item["price"]; ?></td>
+            <td data th="Quantity"><input type="number" class="form-control text-center" value="<?php echo $item["qty"]; ?>" onchange="updateCartItem(this, '<?php echo $item["rowid"]; ?>')"></td>
+            <td data-th="Subtotal"><?php echo '$'.$item["subtotal"]; ?></td>
             <td>
-                <a href="cartAction.php?action=removeCartItem&id=<?php echo $item["rowid"]; ?>" class="btn btn-danger" onclick="return confirm('Are you sure?')"><i class="glyphicon glyphicon-trash"></i></a>
+                <a href="cartAction.php?action=removeCartItem&item_id=<?php echo $item["rowid"]; ?>" class="btn btn-danger" onclick="return confirm('Are you sure?')"><i class="glyphicon glyphicon-trash"></i></a>
             </td>
         </tr>
         <?php } }else{ ?>
@@ -91,8 +92,8 @@ $cart = new Cart;
             <td><a href="index.php" class="btn btn-warning"><i class="glyphicon glyphicon-menu-left"></i> Continue Shopping</a></td>
             <td colspan="2"></td>
             <?php if($cart->total_items() > 0){ ?>
-            <td class="text-center"><strong>Total <?php echo '$'.$cart->total().' USD'; ?></strong></td>
-            <td><a href="checkout.php" class="btn btn-success btn-block">Checkout <i class="glyphicon glyphicon-menu-right"></i></a></td>
+            <td class="text-center"><strong>Total <?php echo '$'.$cart->total(); ?></strong></td>
+            <td><a href="checkout.php" class="btn btn-success">Checkout <i class="glyphicon glyphicon-menu-right"></i></a></td>
             <?php } ?>
         </tr>
     </tfoot>

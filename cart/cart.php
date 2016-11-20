@@ -63,7 +63,7 @@ class Cart {
         if(!is_array($item) OR count($item) === 0){
             return FALSE;
         }else{
-            if(!isset($item['id'], $item['name'], $item['price'], $item['qty'])){
+            if(!isset($item['item_id'], $item['item_name'], $item['price'], $item['qty'])){
                 return FALSE;
             }else{
                 /*
@@ -77,7 +77,7 @@ class Cart {
                 // prep the price
                 $item['price'] = (float) $item['price'];
                 // create a unique identifier for the item being inserted into the cart
-                $rowid = md5($item['id']);
+                $rowid = md5($item['item_id']);
                 // get quantity if it's already there and add it on
                 $old_qty = isset($this->cart_contents[$rowid]['qty']) ? (int) $this->cart_contents[$rowid]['qty'] : 0;
                 // re-create the entry with unique identifier and updated quantity

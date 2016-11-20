@@ -47,21 +47,21 @@ include 'dbConfig.php';
     <div id="products" class="row list-group">
         <?php
         //get rows query
-        $query = $dbc->query("SELECT * FROM products ORDER BY id");
+        $query = $dbc->query("SELECT * FROM Items ORDER BY item_id");
         if($query->num_rows > 0){ 
             while($row = $query->fetch_assoc()){
         ?>
         <div class="col-lg-4 col-md-6 col-sm-6">
             <div class="thumbnail">
                 <div class="caption">
-                    <h4 class="list-group-item-heading"><?php echo $row["name"]; ?></h4>
-                    <p class="list-group-item-text"><?php echo $row["description"]; ?></p>
+                    <h4 class="list-group-item-heading"><?php echo $row["item_name"]; ?></h4>
+                    <p class="list-group-item-text"><?php echo $row["item_description"]; ?></p>
                     <div class="row">
                         <div class="col-md-6">
                             <p class="lead"><?php echo '$'.$row["price"].' USD'; ?></p>
                         </div>
                         <div class="col-md-6">
-                            <a class="btn btn-success" href="cartAction.php?action=addToCart&id=<?php echo $row["id"]; ?>">Add to cart</a>
+                            <a class="btn btn-success" href="cartAction.php?action=addToCart&item_id=<?php echo $row["item_id"]; ?>">Add to cart</a>
                         </div>
                     </div>
                 </div>
