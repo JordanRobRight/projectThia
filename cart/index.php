@@ -122,7 +122,9 @@ include 'dbConfig.php';
                     <p class="list-group-item-text"><?php echo $row["item_description"]; ?></p>
                     <div class="row">
                         <div class="col-md-6">
-                            <p class="lead"><?php echo '$'.$row["price"].' USD'; ?></p>
+                            <p class="lead"><?php echo 'Small $'.$row["s_price"], '&nbsp; Large $'.$row["l_price"]; ?></p>
+                            
+                            
                         </div>
                         <div class="col-md-6">
                             <a class="btn btn-success" href="cartAction.php?action=addToCart&item_id=<?php echo $row["item_id"]; ?>">Add to cart</a>
