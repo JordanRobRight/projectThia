@@ -32,16 +32,16 @@ if(isset($_REQUEST['action']) && !empty($_REQUEST['action'])){
         $deleteItem = $cart->remove($_REQUEST['item_id']);
         header("Location: viewCart.php");
     }elseif($_REQUEST['action'] == 'placeOrder' && $cart->total_items() > 0 && !empty($_SESSION['sessCustomerID'])){
-        // insert order details into database
+         // insert order details into database
         $insertOrder = $dbc->query("INSERT INTO orders (customer_id, total_price, created, modified) VALUES ('".$_SESSION['sessCustomerID']."', '".$cart->total()."', '".date("Y-m-d H:i:s")."', '".date("Y-m-d H:i:s")."')");
         
         if($insertOrder){
             $orderID = $dbc->insert_id;
-            $sql = '';
+            $sql = ' ';
             // get cart items
             $cartItems = $cart->contents();
             foreach($cartItems as $item){
-                $sql .= "INSERT INTO order_items (order_id, product_id, quantity) VALUES ('".$orderID."', '".$item['item_id']."', '".$item['qty']."');";
+                $sql .= "INSERT INTO order_items (order_id, item_id, quantity) VALUES ('".$orderID."', '".$item['item_id']."', '".$item['qty']."');";
             }
             // insert order items into database
             $insertOrderItems = $dbc->multi_query($sql);
@@ -49,15 +49,18 @@ if(isset($_REQUEST['action']) && !empty($_REQUEST['action'])){
             if($insertOrderItems){
                 $cart->destroy();
                 header("Location: orderSuccess.php?id=$orderID");
-            }else{
+            }
+            else{
                 header("Location: checkout.php");
             }
         }else{
             header("Location: checkout.php");
         }
-    }else{
+    }
+    else{
         header("Location: index.php");
     }
-}else{
+}
+else{
     header("Location: index.php");
 }

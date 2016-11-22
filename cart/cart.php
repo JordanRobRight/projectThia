@@ -124,7 +124,7 @@ class Cart {
                     $item['price'] = (float) $item['price'];
                 }
                 // product id & name shouldn't be changed
-                foreach(array_diff($keys, array('id', 'name')) as $key){
+                foreach(array_diff($keys, array('item_id', 'item_name')) as $key){
                     $this->cart_contents[$item['rowid']][$key] = $item[$key];
                 }
                 // save cart data

@@ -2,7 +2,7 @@
 // include database configuration file
 include 'dbConfig.php';
 
-// initializ shopping cart class
+// initialize shopping cart class
 include 'cart.php';
 $cart = new Cart;
 
@@ -59,12 +59,10 @@ $custRow = $query->fetch_assoc();
         display: inline-block; width: 8rem;
     }
     
-    
-    
     table#cart tfoot td{display:block; }
     table#cart tfoot td .btn{display:block;}
     
-    </style>
+ </style>
     
 </head>
 <body>
@@ -132,11 +130,13 @@ $custRow = $query->fetch_assoc();
         </tr>
     </tfoot>
     </table>
+    </div>
     <div class="footBtn">
         <a href="index.php" class="btn btn-warning"><i class="glyphicon"></i> Continue Shopping</a>
         <a href="cartAction.php?action=placeOrder" class="btn btn-success orderBtn">Place Order <i class="glyphicon"></i></a>
     </div>
+
+
 </div>
-    </div>
 </body>
 </html>
