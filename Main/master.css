@@ -37,9 +37,6 @@ h1,h2 {
 
 
 /* Main Navigation */
-#main-nav{
-position:relative;
-}
 #main-nav ul{
 	list-style-type:none;
 	padding-left:300px;
@@ -66,14 +63,13 @@ position:relative;
 /* Menu Navigation */
 #menu-nav ul{
 	list-style-type:none;
-	padding-left:30px;
+	padding-left:300px;
 	overflow:hidden;
 	font-size:1.8em;
 	background-color:#d7090d;
 }
 #menu-nav li{
 	float:left;
-	text-align: center;
 }
 #menu-nav a:link,a:visited{
 	display:block;
@@ -147,19 +143,12 @@ position:relative;
 	text-align: left;
 	padding-left:5px;
 }
-
-
 #info {
-	float:left;
+	float:right;
 	width:200px;
 	padding:30px;
 	font-weight: 500;
 	font-size: 1.3em;
-}
-
-#map{
-	width:50%;
-	height:350px;
 }
 
 #textabout {
@@ -200,172 +189,14 @@ position:relative;
 #footer a:hover {
 	color:#E30101;
 }
-/*//////////////////////////////////////////////////////////////////////////////////////////
+/* Extra small devices (phones, less than 768px) */
+/* No media query since this is the default in Bootstrap */
 
-Start of responsive design Tablet
+/* Small devices (tablets, 768px and up) */
+@media (min-width: @screen-sm-min) { ... }
 
-///////////////////////////////////////////////////////////////////////////////////////////*/
-@media only screen and (min-width:501px) and (max-width: 900px){
-	/*tablet*/
-body{
-	
-	margin:0;
-}
-.top{
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: @screen-md-min) { ... }
 
-	width: 100%;
-	height: auto;
-}
-#page-container{
-
-	width: 100%;
-}
-#text{
-
-	float: none;
-	width: 100%
-	height:auto;
-}
-#info{
-
-	float: none;
-}
-
-#center{
-	height:auto;
-}
-
-
-#main-nav ul{ 
-	list-style-type:none;
-	padding-left:100px;
-	overflow:hidden;
-	font-size:1.2em;
-	background-color:#efefef;
-	float:none;
-}
-#main-nav li{
-	float: none;
-} 
-
-#textabout{
-	width: auto;
-	margin: auto;
-	float:left;
-}
-#menu-nav{
-	width:auto;
-	}
-#menu-nav li{
- 	float: none;
- 	text-align:center;
-}
-#specials{
-	padding: 10px 10px 10px 10px;
-}
-#index{
-	padding: 10px 10px 10px 10px;
-}
-#hboard_home{
-	width:100%;
-	font-size:1.1em;
-	border-bottom:1px solid #333;
-	padding:.1em;
-	text-align:center;
-}
-#contenthome{
-	width:40%;
-	height:auto;	
-}
-
-#hours{
-	
-	float: left;
-	margin-bottom: 15px;
-}
-#footer{
-	padding: 10px 10px 10px 10px;
-	text-align: left;
-}
-}
-
-@media only screen{
-	/*mobile*/
-body{
-	
-	margin:0;
-}
-#page-container{
-
-	width: 100%;
-}
-
-
-#text{
-
-	float: none;
-	width: 100%
-	height:auto;
-}
-#info{
-
-	float: none;
-}
-
-#main-nav ul{ 
-	list-style-type:none;
-	padding-left:100px;
-	overflow:hidden;
-	font-size:1.2em;
-	background-color:#efefef;
-	float:none;
-}
-#main-nav li{
-	float: none;
-} 
-
-#textabout{
-	width: 27%;
-	padding:0px;
-	margin: auto;
-	float:left;
-}
-#menu-nav{
-	width:auto;
-	}
-#menu-nav li{
- 	float: none;
- 	text-align:center;
-}
-#specials{
-	padding: 10px 10px 10px 10px;
-}
-#index{
-	padding: 10px 10px 10px 10px;
-}
-
-#hboard_home{
-	height:auto;
-	font-size:1.1em;
-	border-bottom:1px solid #333;
-	padding:.1em;
-	text-align:center;
-	float: none;
-}
-#contenthome{
-	width:100%;
-	height:auto;
-	
-	float:none;
-}
-
-#hours{
-	
-	float: left;
-	margin-bottom: 15px;
-}
-#footer{
-	padding: 10px 10px 10px 10px;
-	text-align: left;
-}
-}
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: @screen-lg-min) { ... }
