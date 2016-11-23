@@ -1,7 +1,7 @@
 <?php 
 // Set the database access information as constants:
-DEFINE ('DB_USER', 'walle_crumpler');
-DEFINE ('DB_PASSWORD', '430R4f!');
+DEFINE ('DB_USER', 'walle_siamAdmin');
+DEFINE ('DB_PASSWORD', 'PAd1@VLOBP3R');
 DEFINE ('DB_HOST', 'localhost');
 DEFINE ('DB_NAME', 'walle_siamthaimenu');
 
