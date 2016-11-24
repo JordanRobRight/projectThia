@@ -13,6 +13,7 @@ if(!isset($_REQUEST['id'])){
     .container{width: 100%;padding: 50px;}
     p{color: #34a853;font-size: 18px;}
     </style>
+    
 </head>
 </head>
 <body>

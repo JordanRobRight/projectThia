@@ -9,43 +9,59 @@ include 'dbConfig.php';
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="menu.css">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" type="text/css" href="shopping.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
 </head>
 <body>
 <!-- Header Image -->
 <div class="jumbotron-header"></div>
 <!-- Navbar -->
 <nav class="navbar navbar-default">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-            </div>
-            <div class="collapse navbar-collapse" id="myNavbar">
-                <ul class="nav navbar-nav">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Menu</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Contact</a></li>
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav">
+            <li><a href="http://wall-e.uwmsois.com/siam/Main/index.php">Home</a></li>
+            <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Menu <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="http://wall-e.uwmsois.com/siam/cart/index.php">Full Menu</a></li>
+                    <li><a href="#appetizers">Appetizers</a></li>
+                    <li><a href="#noodlesoup">Noodle Soups</a></li>
+                    <li><a href="#soup">Soups</a></li>
+                    <li><a href="#salad">Salad</a></li>
+                    <li><a href="#curry">Curry</a></li>
+                    <li><a href="#stirfry">Stir-Fried Noodles</a></li>
+                    <li><a href="#entree">Entrees</a></li>
+                    <li><a href="#stirfry">Stir-Fried Noodles</a></li>
+                    <li><a href="#rice">Fried Rice</a></li>
+                    <li><a href="#beverage">Beverages</a></li>
+                    <li><a href="#dessert">Desserts</a></li>
                 </ul>
-                <ul class="nav navbar-nav navbar-right">
-                <li><a href="viewCart.php"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
- 
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+                
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="viewCart.php"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
+        </ul>
+    </div>
+</nav>
+
+<div id="top">
 <!-- Appetizers -->
-<div class="container products">
+<div id="appetizers" class="container products">
     <h1>Menu</h1>
     <h2>Appetizers</h2>
-    <div id="products" class="row list-group">
+    <div class="row list-group">
         <?php
         //get rows query
         $query = $dbc->query("SELECT * FROM Items WHERE category = 'APPETIZER'");
@@ -74,9 +90,9 @@ include 'dbConfig.php';
     </div>
 </div>
 <!--Noodle Soups -->
-<div class="container products">
+<div id="noodlesoup" class="container products">
     <h2>Noodle Soups</h2>
-    <div id="products" class="row list-group">
+    <div class="row list-group">
         <?php
         //get rows query
         $query = $dbc->query("SELECT * FROM Items WHERE category ='NOODLESOUP'");
@@ -106,9 +122,9 @@ include 'dbConfig.php';
     </div>
 <!-- Soup -->
 
-<div class="container products">
+<div id="soup" class="container products">
     <h2>Soup</h2>
-    <div id="products" class="row list-group">
+    <div class="row list-group">
         <?php
         //get rows query
         $query = $dbc->query("SELECT * FROM Items WHERE category ='SOUP'");
@@ -140,9 +156,9 @@ include 'dbConfig.php';
 </div>
 
 <!-- Salad -->
-<div class="container products">
+<div id="salad" class="container products">
     <h2>Salads</h2>
-    <div id="products" class="row list-group">
+    <div class="row list-group">
         <?php
         //get rows query
         $query = $dbc->query("SELECT * FROM Items WHERE category ='SALAD'");
@@ -171,9 +187,9 @@ include 'dbConfig.php';
     </div>
 </div>
 <!-- Curry -->
-<div class="container products">
+<div id="curry" class="container products">
     <h2>Curry</h2>
-    <div id="products" class="row list-group">
+    <div class="row list-group">
         <?php
         //get rows query
         $query = $dbc->query("SELECT * FROM Items WHERE category ='CURRY'");
@@ -202,9 +218,9 @@ include 'dbConfig.php';
     </div>
 </div>
 <!-- Stir Fried Noodles -->
-<div class="container products">
+<div id="stirfry" class="container products">
     <h2>Stir-Fried Noodles</h2>
-    <div id="products" class="row list-group">
+    <div class="row list-group">
         <?php
         //get rows query
         $query = $dbc->query("SELECT * FROM Items WHERE category ='STIRFRY'");
@@ -233,9 +249,9 @@ include 'dbConfig.php';
     </div>
 </div>
 <!-- Entrees -->
-<div class="container products">
+<div id="entree" class="container products">
     <h2>Entrees</h2>
-    <div id="products" class="row list-group">
+    <div class="row list-group">
         <?php
         //get rows query
         $query = $dbc->query("SELECT * FROM Items WHERE category ='ENTREE'");
@@ -264,9 +280,9 @@ include 'dbConfig.php';
     </div>
 </div>
 <!-- Fried Rice -->
-<div class="container products">
+<div id="rice" class="container products">
     <h2>Fried Rice</h2>
-    <div id="products" class="row list-group">
+    <div class="row list-group">
         <?php
         //get rows query
         $query = $dbc->query("SELECT * FROM Items WHERE category ='FRIEDRICE'");
@@ -295,9 +311,9 @@ include 'dbConfig.php';
     </div>
 </div>
 <!-- Bevarages -->
-<div class="container products">
+<div id="beverage" class="container products">
     <h2>Beverages</h2>
-    <div id="products" class="row list-group">
+    <div class="row list-group">
         <?php
         //get rows query
         $query = $dbc->query("SELECT * FROM Items WHERE category ='BEVERAGE'");
@@ -326,9 +342,9 @@ include 'dbConfig.php';
     </div>
 </div>
 <!-- Dessert -->
-<div class="container products">
+<div id="dessert" class="container products">
     <h2>Dessert</h2>
-    <div id="products" class="row list-group">
+    <div class="row list-group">
         <?php
         //get rows query
         $query = $dbc->query("SELECT * FROM Items WHERE category ='DESSERT'");
@@ -355,6 +371,8 @@ include 'dbConfig.php';
         <p>Product(s) not found.....</p>
         <?php } ?>
     </div>
+</div>
+
 </div>
 </body>
 </html>

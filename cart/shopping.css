@@ -1,14 +1,69 @@
 
+/* Header Image */
 .jumbotron-header{
     background-image: url(header.jpg);
     background-size: cover;
     height: 300px;
-    margin-bottom: 0;
-}
-.navbar-default{
-    margin-bottom: 0;
-}
     
+}
+
+/* Nav Bar */
+.navbar-default{
+    font-family: 'Open Sans Condensed', sans-serif;
+    text-transform: uppercase;
+    font-size: 1.5em;
+  }
+.navbar-default {
+  background-color: #efefef;
+  border-color: #efefef;
+}
+
+.navbar-default .navbar-text {
+  color: #000000;
+}
+.navbar-default .navbar-nav > li > a {
+  color: #000000;
+}
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+  color: #ffa500;
+}
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+  color: #ffa500;
+  background-color: #efefef;
+}
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:hover,
+.navbar-default .navbar-nav > .open > a:focus {
+  color: #ffa500;
+  background-color: #efefef;
+}
+.navbar-default .navbar-toggle {
+  border-color: #efefef;
+}
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus {
+  background-color: #efefef;
+}
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #000000;
+}
+
+.navbar-default .navbar-link {
+  color: #000000;
+}
+.navbar-default .navbar-link:hover {
+  color: #ffa500;
+}
+
+
+
+.thumbnail
+{
+  font-family: 'Open Sans Condensed', sans-serif;
+}
 .footer {
     position: absolute;
     width: 100%;
@@ -22,12 +77,16 @@
 }
 
 .caption {
-    height: 200px;
+    height: 250px;
     overflow: hidden;
 }
 
 .caption h4 {
-    font-size: 1.1em;
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-weight: bold;
+  font-size: 1.5em;
+  color: orange;
+    
     
 }
 
@@ -38,6 +97,7 @@
 
 .container{
   width: 100%;
+  font-family: 'Open Sans Condensed', sans-serif;
 }
 
     p{font-size: 18px;}
@@ -57,13 +117,37 @@
 }
 
 .container h1{
-    font-family: verdana;
     color:orange;
   }
   #cart{
     font-size: 18px;
+  }
+    
+table#cart thead { 
+  display: none; 
 }
-     @media screen and (max-width: 600px) {
+table#cart tbody td {
+ display: block; 
+ padding: .6rem; 
+ min-width:320px;
+}
+table#cart tbody tr td:first-child {
+  background: #870808;
+  color: #fff; 
+}
+table#cart tbody td:before {
+  content: attr(data-th); font-weight: bold;
+  display: inline-block; width: 8rem;
+}
+table#cart tfoot td{
+  display:block; 
+}
+table#cart tfoot td .btn{
+      display:block;
+}
+
+
+@media screen and (max-width: 600px) {
     #cart tbody td .form-control{
         width:20%;
         display: inline !important;
@@ -79,20 +163,20 @@
     .actions .btn-danger{
         float:right;
     }
-    
-    table#cart thead { display: none; }
-    table#cart tbody td { display: block; padding: .6rem; min-width:320px;}
-    table#cart tbody tr td:first-child { background: #870808; color: #fff; }
-    table#cart tbody td:before {
-        content: attr(data-th); font-weight: bold;
-        display: inline-block; width: 8rem;
+  }
+
+@media screen and (min-width: 1330px) {
+    .jumbotron-header{
+      background-image: url(header.jpg);
+    background-size: cover;
+        height: 400px;
     }
-    
-    
-    
-    table#cart tfoot td{display:block; }
-    table#cart tfoot td .btn{display:block;}
-    
 }
 
-    </style>
+@media screen and (min-width: 1700px){
+  .jumbotron-header{
+      background-image: url(header.jpg);
+    background-size: cover;
+        height: 480px;
+    }
+}

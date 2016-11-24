@@ -22,14 +22,14 @@ $custRow = $query->fetch_assoc();
 <html lang="en">
 <head>
     <title>Checkout</title>
-    <meta charset="utf-8">
+     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="menu.css">
     <link rel="stylesheet" type="text/css" href="shopping.css">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
 <style>
        #cart{
     font-size: 18px;
@@ -70,27 +70,39 @@ $custRow = $query->fetch_assoc();
 <div class="jumbotron-header"></div>
 <!-- Navbar -->
 <nav class="navbar navbar-default">
-        <div class="container-nav">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-            </div>
-            <div class="collapse navbar-collapse" id="myNavbar">
-                <ul class="nav navbar-nav">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Menu</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Contact</a></li>
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav">
+            <li><a href="#">Home</a></li>
+            <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Menu <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="#appetizers">Appetizers</a></li>
+                    <li><a href="#noodlesoup">Noodle Soups</a></li>
+                    <li><a href="#soup">Soups</a></li>
+                    <li><a href="#salad">Salad</a></li>
+                    <li><a href="#curry">Curry</a></li>
+                    <li><a href="#stirfry">Stir-Fried Noodles</a></li>
+                    <li><a href="#entree">Entrees</a></li>
+                    <li><a href="#stirfry">Stir-Fried Noodles</a></li>
+                    <li><a href="#rice">Fried Rice</a></li>
+                    <li><a href="#beverage">Beverages</a></li>
+                    <li><a href="#dessert">Desserts</a></li>
                 </ul>
-                <ul class="nav navbar-nav navbar-right">
-                <li><a href="viewCart.php"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+                
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="viewCart.php"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
+        </ul>
+    </div>
+</nav>
 
 <div class="container">
 <div class="col-lg-12 col-md-8 col-sm-10">
