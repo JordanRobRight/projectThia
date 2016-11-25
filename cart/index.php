@@ -34,17 +34,17 @@ include 'dbConfig.php';
             <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Menu <span class="caret"></span></a>
                 <ul class="dropdown-menu">
                     <li><a href="http://wall-e.uwmsois.com/siam/cart/index.php">Full Menu</a></li>
-                    <li><a href="#appetizers">Appetizers</a></li>
-                    <li><a href="#noodlesoup">Noodle Soups</a></li>
-                    <li><a href="#soup">Soups</a></li>
-                    <li><a href="#salad">Salad</a></li>
-                    <li><a href="#curry">Curry</a></li>
-                    <li><a href="#stirfry">Stir-Fried Noodles</a></li>
-                    <li><a href="#entree">Entrees</a></li>
-                    <li><a href="#stirfry">Stir-Fried Noodles</a></li>
-                    <li><a href="#rice">Fried Rice</a></li>
-                    <li><a href="#beverage">Beverages</a></li>
-                    <li><a href="#dessert">Desserts</a></li>
+                    <li><a href="http://wall-e.uwmsois.com/siam/cart/index.php#appetizers">Appetizers</a></li>
+                    <li><a href="http://wall-e.uwmsois.com/siam/cart/index.php#noodlesoup">Noodle Soups</a></li>
+                    <li><a href="http://wall-e.uwmsois.com/siam/cart/index.php#soup">Soups</a></li>
+                    <li><a href="http://wall-e.uwmsois.com/siam/cart/index.php#salad">Salad</a></li>
+                    <li><a href="http://wall-e.uwmsois.com/siam/cart/index.php#curry">Curry</a></li>
+                    <li><a href="http://wall-e.uwmsois.com/siam/cart/index.php#stirfry">Stir-Fried Noodles</a></li>
+                    <li><a href="http://wall-e.uwmsois.com/siam/cart/index.php#entree">Entrees</a></li>
+                    <li><a href="http://wall-e.uwmsois.com/siam/cart/index.php#stirfry">Stir-Fried Noodles</a></li>
+                    <li><a href="http://wall-e.uwmsois.com/siam/cart/index.php#rice">Fried Rice</a></li>
+                    <li><a href="http://wall-e.uwmsois.com/siam/cart/index.php#beverage">Beverages</a></li>
+                    <li><a href="http://wall-e.uwmsois.com/siam/cart/index.php#dessert">Desserts</a></li>
                 </ul>
             <li><a href="#">About</a></li>
             <li><a href="#">Contact</a></li>

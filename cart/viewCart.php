@@ -11,10 +11,11 @@ $cart = new Cart;
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="shopping.css">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" type="text/css" href="shopping.css">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
     <script>
     function updateCartItem(obj,item_id){
@@ -27,42 +28,6 @@ $cart = new Cart;
         });
     }
     </script>
-    <style>
-    #cart{
-    font-size: 18px;
-}
-     @media screen and (max-width: 600px) {
-    #cart tbody td .form-control{
-        width:20%;
-        display: inline !important;
-    }
-    .actions .btn{
-        width:36%;
-        margin:1.5em 0;
-    }
-    
-    .actions .btn-info{
-        float:left;
-    }
-    .actions .btn-danger{
-        float:right;
-    }
-    
-    table#cart thead { display: none; }
-    table#cart tbody td { display: block; padding: .6rem; min-width:320px;}
-    table#cart tbody tr td:first-child { background: #870808; color: #fff; }
-    table#cart tbody td:before {
-        content: attr(data-th); font-weight: bold;
-        display: inline-block; width: 8rem;
-    }
-    
-    
-    
-    table#cart tfoot td{display:block; }
-    table#cart tfoot td .btn{display:block;}
-    
-</style>
-
 </head>
 <body>
 <!-- Header Image -->
