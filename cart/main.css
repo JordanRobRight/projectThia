@@ -73,101 +73,124 @@
 .navbar-default .navbar-link:hover {
   color: #ffa500;
 }
+/* Carousel*/
 
-/* Menu Items */
-
-.thumbnail {
-  font-family: 'Open Sans Condensed', sans-serif;
-  display: block;
-  padding: 4px;
-  margin-bottom: 20px;
-  line-height: 1.42857143;
-  background-color: #fff;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  -webkit-transition: border .2s ease-in-out;
-       -o-transition: border .2s ease-in-out;
-          transition: border .2s ease-in-out;
+.carousel-inner > .item > img,
+.carousel-inner > .item > a > img {
+      width: 100%;
+      margin: auto;
+  }
+.carousel{
+    width: 70%;
+    margin: auto;
+    margin-bottom: 50px;
 }
+.item{
+    font-family: 'Open Sans Condensed', sans-serif;
+}
+/* Home Page */
 
 .container{
-  width: 100%;
-  font-family: 'Open Sans Condensed', sans-serif;
+    text-align: center;
+    font-family: 'Open Sans Condensed', sans-serif;
+    color: orange;
 }
 
-.container h1{
-    color:orange;
-  }
-
-.caption {
-    height: 250px;
-    overflow: hidden;
+/* About Page */
+#background{
+    background-color:#f90;
 }
 
-.caption h4 {
-  font-family: 'Open Sans Condensed', sans-serif;
-  font-weight: bold;
-  font-size: 1.5em;
-  color: orange;
+#about{
+    text-align: center;
+    width: 60%;
+    height: 700px;
+    background-color: #C63;
+    border-radius: 10px;
+}
+#about h2{
+    color: #f90;
 }
 
-.caption p{
-  font-size: 1.2em;
+#about h3{
+    color: #666666;
+}
+#about h4{
+    color: #666666;
+}
+/* Media Query for About Page */
+@media screen and (max-width: 598px){
+    #about{
+        width: 85%;
+        height:600px;
+    }
+    #about h2{
+        font-size: 1.5em;
+    }
+    #about h3{
+        font-size: 1.3em;
+    }
+    #about h4{
+       font-size: 1.1em;
+    }
 }
 
-/* Shopping Cart */
-#cart{
-  font-size: 18px;
-  float:left;
+/*Contact Page*/
+#hours{
+    height:350px;
+    width: 50%;
+    background-color: #900;
+    border-radius: 10px;
+    text-align: center;
+    color:#fff;
+    margin-bottom: 50px;
+;
+}
+.table{
+    width: 50%;
+    margin: auto;
+    font-size: 1.2em;
+}
+.table td { 
+     border-top: none !important; 
+    ;
+ }
+#info{
+    width: 50%;
+    text-align: center;
+    font-size:1.5em;
+    color:#666666;
+
+}
+#map-outer { 
+    text-align: center;
+    font-size: 1.5em;
+    color: #666666;
+    height: 400px; 
+    padding: 20px;  
+    margin-bottom: 20px; 
+  
+}
+#map-container { 
+    width: 600px;
+    height: 350px;
+   
 }
 
+/*Media Query Contact*/
 
-/* Media Query for Shopping Cart */
-@media screen and (max-width: 600px) {
-  #cart tbody td .form-control{
-    width:20%;
-    display: inline !important;
-  }
-  .actions .btn{
-    width:36%;
-    margin:1.5em 0;
-  }
-  .actions .btn-info{
-    float:left;
-  }
-  .actions .btn-danger{
-    float:right;
-  }
-    
-  table#cart thead { 
-    display: none; 
-  }
-  table#cart tbody td {
-    display: block; padding: .6rem; min-width:320px;
-  }
-  table#cart tbody tr td:first-child {
-    background: #870808; color: #fff; 
-  }
-  table#cart tbody td:before {
-    content: attr(data-th); font-weight: bold;
-    display: inline-block; width: 8rem;
-  }
-    
-  table#cart tfoot td{
-    display:block; 
-  }
-  table#cart tfoot td .btn{
-    display:block;}
-  }
-/* Order Success Page */
-#success {
-    font-size: 18px;
+@media all and (max-width: 991px) {
+    #map-outer{
+        height: 650px }
+    }
+@media screen and (max-width: 991px){
+    #hours{
+        width:80%;
+    }
+    #map-container{
+        width: 100%;
+    }
 }
-
-#status{
-    height:400px;
-}
-    
 /* Footer */
   .bg-4 { 
       background-color: #FFBA00; 

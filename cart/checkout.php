@@ -8,7 +8,7 @@ $cart = new Cart;
 
 // redirect to home if cart is empty
 if($cart->total_items() <= 0){
-    header("Location: index.php");
+    header("Location: menu.php");
 }
 
 // set customer ID in session
@@ -34,43 +34,10 @@ $custRow = $query->fetch_assoc();
     
 </head>
 <body>
-<!-- Header Image -->
-<div class="jumbotron-header"></div>
-<!-- Navbar -->
-<nav class="navbar navbar-default">
-    <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-        </button>
-    </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-        <ul class="nav navbar-nav">
-            <li><a href="#">Home</a></li>
-            <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Menu <span class="caret"></span></a>
-                <ul class="dropdown-menu">
-                    <li><a href="#appetizers">Appetizers</a></li>
-                    <li><a href="#noodlesoup">Noodle Soups</a></li>
-                    <li><a href="#soup">Soups</a></li>
-                    <li><a href="#salad">Salad</a></li>
-                    <li><a href="#curry">Curry</a></li>
-                    <li><a href="#stirfry">Stir-Fried Noodles</a></li>
-                    <li><a href="#entree">Entrees</a></li>
-                    <li><a href="#stirfry">Stir-Fried Noodles</a></li>
-                    <li><a href="#rice">Fried Rice</a></li>
-                    <li><a href="#beverage">Beverages</a></li>
-                    <li><a href="#dessert">Desserts</a></li>
-                </ul>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Contact</a></li>
-        </ul>
-                
-        <ul class="nav navbar-nav navbar-right">
-            <li><a href="viewCart.php"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
-        </ul>
-    </div>
-</nav>
+<?php
+// include header file
+include '../resources/header.php';
+?>
 
 <div class="container">
 <div class="col-lg-12 col-md-8 col-sm-10">
@@ -112,11 +79,14 @@ $custRow = $query->fetch_assoc();
     </table>
     </div>
     <div class="footBtn">
-        <a href="index.php" class="btn btn-warning"><i class="glyphicon"></i> Continue Shopping</a>
+        <a href="menu.php" class="btn btn-warning"><i class="glyphicon"></i> Continue Shopping</a>
         <a href="cartAction.php?action=placeOrder" class="btn btn-success orderBtn">Place Order <i class="glyphicon"></i></a>
     </div>
 
-
 </div>
+<?php
+// include footer file
+include '../resources/footer.php';
+?>
 </body>
 </html>
