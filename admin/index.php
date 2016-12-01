@@ -4,7 +4,7 @@
 	if(isset($_SESSION['adminLogin'])){  //if session already set redirect
 		header("location: dashboard.php");
 	}
-		include("/home/walle/public_html/siam/resources/header.php"); //use consistent html head
+		include("/home/walle/public_html/siam/resources/adminheader.php"); //use consistent html head
 ?>
 
 	<div class="container">
@@ -39,4 +39,4 @@
 		</form>
 	</div>
 
-<?php include("/home/walle/public_html/siam/resources/footer.php"); ?>
+<?php include("/home/walle/public_html/siam/resources/adminfooter.php"); ?>

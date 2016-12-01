@@ -2,7 +2,7 @@
 	require("adminauth.php");  //adminauth has to be included first, so session_start() function is at top of final script
  	include("../resources/dbConfig.php");  //poorly designed currently. config.php has credentials for admin db, probably not needed on this page
 	include("create-item.php");
-	include("../resources/header.php");
+	include("../resources/adminheader.php");
 	include("edit-query.php");
 	include("delete-action.php");
 
@@ -108,7 +108,7 @@
 			}
 
 			$q = "SELECT COUNT(*) FROM Items";						//calculate the number of pages and offset value
-			$r = @mysqli_query($conn, $q);
+			$r = @mysqli_query($dbc, $q);
 			$ret = @mysqli_fetch_array($r, MYSQLI_NUM);
 			$count = $ret[0];
 			if ($count > $display) {
@@ -130,7 +130,7 @@
 
 				<?php
 
-				$items = mysqli_query($conn, "select * from Items ORDER BY category, item_name LIMIT $offset, $display");
+				$items = mysqli_query($dbc, "select * from Items ORDER BY category, item_name LIMIT $offset, $display");
 
 				if ($items) {
 					echo'<tr>
@@ -210,5 +210,5 @@
 </div>
 
 <?php
-	include("/home/walle/public_html/siam/resources/footer.php");
+	include("/home/walle/public_html/siam/resources/adminfooter.php");
 ?>
