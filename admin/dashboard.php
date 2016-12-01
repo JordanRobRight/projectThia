@@ -1,7 +1,6 @@
 <?php
 	require("adminauth.php");  //adminauth has to be included first, so session_start() function is at top of final script
- 	include("../resources/config.php");  //poorly designed currently. config.php has credentials for admin db, probably not needed on this page
-	include("../resources/publicmenudb.php");  //still poorly designed, I just created a new connection to access menu db
+ 	include("../resources/dbConfig.php");  //poorly designed currently. config.php has credentials for admin db, probably not needed on this page
 	include("create-item.php");
 	include("../resources/header.php");
 	include("edit-query.php");
