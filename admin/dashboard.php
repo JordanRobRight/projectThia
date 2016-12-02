@@ -4,7 +4,7 @@
 	include("create-item.php");
 	include("../resources/adminheader.php");
 	include("edit-query.php");
-	include("delete-action.php");
+	include("delete-Action.php");
 
 
 
@@ -21,7 +21,7 @@
 		<div class="col-md-4">
 			<!--  Begin form for adding a menu item  -->
 			<h2>Add New Menu Item</h2>
-			<form id="addItem" method="POST" <?php if ($edit){echo 'action="edit-action.php"';} else {echo 'action="dashboard.php"';}?>>
+			<form id="addItem" method="POST" <?php if ($edit){echo 'Action="edit-Action.php"';} else {echo 'Action="dashboard.php"';}?>>
 				<input name="id" type="hidden"<?php if (!empty($eid)){echo ' value="'.$eid.'"';}?>>
 				<div class="form-group">
 					<label for="itemName">Item Name:</label>
@@ -133,7 +133,8 @@
 				$items = mysqli_query($dbc, "select * from Items ORDER BY category, item_name LIMIT $offset, $display");
 
 				if ($items) {
-					echo'<tr>
+					echo'<thead>
+					<tr>
 						<th>Menu Item</th>
 						<th>Sizes</th>
 						<th>Price</th>
@@ -141,8 +142,10 @@
 						<th>Description</th>
 						<th>Category</th>
 						<th>Protein</th>
-						<th>Actions</th>
-					</tr>';
+						<th>Action</th>
+					</tr>
+					</thead>
+					<tbody>';
 					$i = 1;
 					while ($row = mysqli_fetch_array($items, MYSQLI_ASSOC)) {
 						$item = $row['item_name'];
@@ -170,7 +173,7 @@
 							<td>'.$meat.'</td>
 							<td>
 								<div class="btn-group">
-									<button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Actions <span class="caret"></span></button>
+									<button type="button" class="btn btn-sm btn-warning dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Options  <span class="glyphicon glyphicon-cog"></span></button>
 									<ul class="dropdown-menu">
 										<li><a href="dashboard.php?e=t&eid='.$iid.'" alt="edit item">Edit Item</a></li>
 										<li role="separator" class="divider"></li>
@@ -183,6 +186,7 @@
 					}
 				}
 				?>
+				</tbody>
 			</table>
 			<?php 							//display pagination
 			if ($numpgs > 1) {
