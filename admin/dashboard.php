@@ -4,7 +4,7 @@
 	include("create-item.php");
 	include("../resources/adminheader.php");
 	include("edit-query.php");
-	include("delete-Action.php");
+	include("delete-action.php");
 
 
 
@@ -21,7 +21,7 @@
 		<div class="col-md-4">
 			<!--  Begin form for adding a menu item  -->
 			<h2>Add New Menu Item</h2>
-			<form id="addItem" method="POST" <?php if ($edit){echo 'Action="edit-Action.php"';} else {echo 'Action="dashboard.php"';}?>>
+			<form id="addItem" method="POST" <?php if ($edit){echo 'Action="edit-action.php"';} else {echo 'Action="dashboard.php"';}?>>
 				<input name="id" type="hidden"<?php if (!empty($eid)){echo ' value="'.$eid.'"';}?>>
 				<div class="form-group">
 					<label for="itemName">Item Name:</label>
@@ -197,8 +197,14 @@
 								<span aria-hidden="true">&laquo;</span>
 							</a>
 						</li>';
+
 						for ($i=1; $i <= $numpgs; $i++){
-							echo '<li><a href="dashboard.php?p='.$i.'">'.$i.'</a></li>';
+							if ($i == $curpg){
+								$activeClass = ' class="active"';
+							} else {
+								$activeClass = ' class="pgli"';
+							}
+							echo '<li'.$activeClass. '><a href="dashboard.php?p='.$i.'">'.$i.'</a></li>';
 						}
 						echo '<li'.$next.'>
 							<a href="dashboard.php?p='.($curpg+1).'" aria-label="Next">
