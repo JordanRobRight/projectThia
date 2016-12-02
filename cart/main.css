@@ -81,7 +81,7 @@
       margin: auto;
   }
 .carousel{
-    width: 70%;
+    width: 90%;
     margin: auto;
     margin-bottom: 50px;
 }
@@ -104,10 +104,11 @@
 #about{
     text-align: center;
     width: 60%;
-    height: 700px;
+    height: 650px;
     background-color: #C63;
     border-radius: 10px;
-}
+    }
+
 #about h2{
     color: #f90;
 }

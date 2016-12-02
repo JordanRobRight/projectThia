@@ -31,7 +31,7 @@ include '../resources/header.php';
     <h2>Monday - Saturday : 11 AM - 9PM</h2>
     <h2>Sunday: Closed</h2>
     <br>
-    <h4>15% Gratuity for parties of 5 or more. Please inform your server of any food allergies you may have a $10 minimum for all credit card purchases</h4>
+    <h4>15% Gratuity for parties of 5 or more. Please inform your server of any food allergies you may have. <br>$10 minimum for all credit card purchases</h4>
 </div>
 <?php
 // include footer file
