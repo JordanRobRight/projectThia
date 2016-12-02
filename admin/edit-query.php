@@ -5,7 +5,7 @@ if ($_SERVER['REQUEST_METHOD'] == "GET") {
 		$fid = filter_var($_GET['eid'], FILTER_SANITIZE_NUMBER_INT);
 		$fq = "SELECT * FROM Items WHERE item_id = $fid";
 
-		$find = @mysqli_query($conn,$fq);
+		$find = @mysqli_query($dbc,$fq);
 
 		$found = @mysqli_fetch_array($find, MYSQLI_ASSOC);
 

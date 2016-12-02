@@ -29,7 +29,7 @@
 
 			$query = "INSERT INTO walle_siamthaimenu.Items (item_id, item_name, item_description, category, protein, price, s_price, l_price) VALUES (NULL, ?, ?, ?, ?, ?, ?, ?)";
 
-			$insQuery = mysqli_prepare($conn, $query);
+			$insQuery = mysqli_prepare($dbc, $query);
 			$myquery = mysqli_stmt_bind_param($insQuery, "ssssddd", $iname, $idesc, $cat, $prot, $price, $sprice, $lprice);
 			if (mysqli_stmt_execute($insQuery)) {
 				$success = 'Item has been successfully added to the menu';
