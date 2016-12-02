@@ -175,9 +175,9 @@
 								<div class="btn-group">
 									<button type="button" class="btn btn-sm btn-warning dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Options  <span class="glyphicon glyphicon-cog"></span></button>
 									<ul class="dropdown-menu">
-										<li><a href="dashboard.php?e=t&eid='.$iid.'" alt="edit item">Edit Item</a></li>
+										<li><a href="dashboard.php?e=t&eid='.$iid.'&p='.$curpg.'" alt="edit item">Edit Item</a></li>
 										<li role="separator" class="divider"></li>
-										<li><a href="dashboard.php?d=t&did='.$iid.'" alt="delete item" class="deleteButton" id="del'.$iid.'" onclick="return delConfirm()">Delete Item</a></li>
+										<li><a href="dashboard.php?d=t&did='.$iid.'&p='.$curpg.'" alt="delete item" class="deleteButton" id="del'.$iid.'" onclick="return delConfirm()">Delete Item</a></li>
 									</ul>
 								</div>
 							</td>
