@@ -59,7 +59,7 @@ include '../resources/header.php';
     </div>
   </div>
 
-
+  <script src="../resources/googleMaps.js"></script>
   <?php
 // include footer file
 include '../resources/footer.php';
