@@ -11,7 +11,7 @@
 
 @media screen and (min-width: 1330px) {
     .jumbotron-header {
-        background-image: url(header.jpg);
+        background-image: url(../resources/images/header.jpg);
         background-size: cover;
         height: 400px;
     }
@@ -19,7 +19,7 @@
 
 @media screen and (min-width: 1700px) {
     .jumbotron-header {
-        background-image: url(header.jpg);
+        background-image: url(../resources/images/header.jpg);
         background-size: cover;
         height: 480px;
     }
