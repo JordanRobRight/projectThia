@@ -1,23 +1,6 @@
 <?php
 // include database configuration file
 include 'dbConfig.php';
-?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <title>Menu</title>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <!-- Custom CSS -->
-    <link rel="stylesheet" type="text/css" href="shopping.css">
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
-</head>
-<body>
-<?php
 // include header file
 include '../resources/header.php';
 ?>
@@ -31,7 +14,7 @@ include '../resources/header.php';
         <?php
         //get rows query
         $query = $dbc->query("SELECT * FROM Items WHERE category = 'APPETIZER'");
-        if($query->num_rows > 0){ 
+        if($query->num_rows > 0){
             while($row = $query->fetch_assoc()){
         ?>
         <div class="col-lg-4 col-md-6 col-sm-6">
@@ -62,7 +45,7 @@ include '../resources/header.php';
         <?php
         //get rows query
         $query = $dbc->query("SELECT * FROM Items WHERE category ='NOODLESOUP'");
-        if($query->num_rows > 0){ 
+        if($query->num_rows > 0){
             while($row = $query->fetch_assoc()){
         ?>
         <div class="col-lg-4 col-md-6 col-sm-6">
@@ -94,7 +77,7 @@ include '../resources/header.php';
         <?php
         //get rows query
         $query = $dbc->query("SELECT * FROM Items WHERE category ='SOUP'");
-        if($query->num_rows > 0){ 
+        if($query->num_rows > 0){
             while($row = $query->fetch_assoc()){
         ?>
         <div class="col-lg-4 col-md-6 col-sm-6">
@@ -128,7 +111,7 @@ include '../resources/header.php';
         <?php
         //get rows query
         $query = $dbc->query("SELECT * FROM Items WHERE category ='SALAD'");
-        if($query->num_rows > 0){ 
+        if($query->num_rows > 0){
             while($row = $query->fetch_assoc()){
         ?>
         <div class="col-lg-4 col-md-6 col-sm-6">
@@ -159,7 +142,7 @@ include '../resources/header.php';
         <?php
         //get rows query
         $query = $dbc->query("SELECT * FROM Items WHERE category ='CURRY'");
-        if($query->num_rows > 0){ 
+        if($query->num_rows > 0){
             while($row = $query->fetch_assoc()){
         ?>
         <div class="col-lg-4 col-md-6 col-sm-6">
@@ -190,7 +173,7 @@ include '../resources/header.php';
         <?php
         //get rows query
         $query = $dbc->query("SELECT * FROM Items WHERE category ='STIRFRY'");
-        if($query->num_rows > 0){ 
+        if($query->num_rows > 0){
             while($row = $query->fetch_assoc()){
         ?>
         <div class="col-lg-4 col-md-6 col-sm-6">
@@ -221,7 +204,7 @@ include '../resources/header.php';
         <?php
         //get rows query
         $query = $dbc->query("SELECT * FROM Items WHERE category ='ENTREE'");
-        if($query->num_rows > 0){ 
+        if($query->num_rows > 0){
             while($row = $query->fetch_assoc()){
         ?>
         <div class="col-lg-4 col-md-6 col-sm-6">
@@ -252,7 +235,7 @@ include '../resources/header.php';
         <?php
         //get rows query
         $query = $dbc->query("SELECT * FROM Items WHERE category ='FRIEDRICE'");
-        if($query->num_rows > 0){ 
+        if($query->num_rows > 0){
             while($row = $query->fetch_assoc()){
         ?>
         <div class="col-lg-4 col-md-6 col-sm-6">
@@ -283,7 +266,7 @@ include '../resources/header.php';
         <?php
         //get rows query
         $query = $dbc->query("SELECT * FROM Items WHERE category ='BEVERAGE'");
-        if($query->num_rows > 0){ 
+        if($query->num_rows > 0){
             while($row = $query->fetch_assoc()){
         ?>
         <div class="col-lg-4 col-md-6 col-sm-6">
@@ -314,7 +297,7 @@ include '../resources/header.php';
         <?php
         //get rows query
         $query = $dbc->query("SELECT * FROM Items WHERE category ='DESSERT'");
-        if($query->num_rows > 0){ 
+        if($query->num_rows > 0){
             while($row = $query->fetch_assoc()){
         ?>
         <div class="col-lg-4 col-md-6 col-sm-6">
@@ -344,5 +327,3 @@ include '../resources/header.php';
 // include footer file
 include '../resources/footer.php';
 ?>
-</body>
-</html>

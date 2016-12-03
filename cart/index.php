@@ -1,18 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <title>Siam Thai</title>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-     <!-- Custom CSS -->
-    <link rel="stylesheet" type="text/css" href="main.css">
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
-</head>
-<body>
 <?php
 // include header file
 include '../resources/header.php';
@@ -20,7 +5,7 @@ include '../resources/header.php';
 
     
 <div  class="container">
-<h1>Featured Dishes</h1>    
+<h1>Featured Dishes</h1>
 </div>
     <!-- Carousel -->
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -88,14 +73,14 @@ include '../resources/header.php';
       <img src="../image/Siam Fried Rice.JPG" alt="Siam Fried Rice"><div class="carousel-caption">
           <h3>Siam Fried Rice</h3>
         </div>
-    </div> 
+    </div>
     
     <div class="item">
       <img src="../image/Tom Kha Soup.JPG" alt="Tom Kha Soup">
         <div class="carousel-caption">
           <h3>Tom Kha Soup</h3>
         </div>
-    </div> 
+    </div>
       
     <div class="item">
       <img src="../image/Tom Yum Soup.JPG" alt="Tom Yum Soup">
@@ -127,5 +112,3 @@ include '../resources/header.php';
 // include footer file
 include '../resources/footer.php';
 ?>
-    </body>
-</html>

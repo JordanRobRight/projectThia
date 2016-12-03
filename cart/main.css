@@ -1,206 +1,235 @@
-
 /* Header Image */
-.jumbotron-header{
-    background-image: url(header.jpg);
+
+.jumbotron-header {
+    background-image: url(../resources/images/header.jpg);
     background-size: cover;
     height: 300px;
 }
+
+
 /* Media Queries for Header Image */
 
 @media screen and (min-width: 1330px) {
-    .jumbotron-header{
-      background-image: url(header.jpg);
-    background-size: cover;
+    .jumbotron-header {
+        background-image: url(header.jpg);
+        background-size: cover;
         height: 400px;
     }
 }
 
-@media screen and (min-width: 1700px){
-  .jumbotron-header{
-      background-image: url(header.jpg);
-    background-size: cover;
+@media screen and (min-width: 1700px) {
+    .jumbotron-header {
+        background-image: url(header.jpg);
+        background-size: cover;
         height: 480px;
     }
 }
 
+
 /* Nav Bar */
-.navbar-default{
+
+.navbar-default {
     font-family: 'Open Sans Condensed', sans-serif;
     text-transform: uppercase;
     font-size: 1.5em;
-  }
+}
+
 .navbar-default {
-  background-color: #efefef;
-  border-color: #efefef;
+    background-color: #efefef;
+    border-color: #efefef;
 }
 
 .navbar-default .navbar-text {
-  color: #000000;
+    color: #000000;
 }
-.navbar-default .navbar-nav > li > a {
-  color: #000000;
+
+.navbar-default .navbar-nav>li>a {
+    color: #000000;
 }
-.navbar-default .navbar-nav > li > a:hover,
-.navbar-default .navbar-nav > li > a:focus {
-  color: #ffa500;
+
+.navbar-default .navbar-nav>li>a:hover, .navbar-default .navbar-nav>li>a:focus {
+    color: #ffa500;
 }
-.navbar-default .navbar-nav > .active > a,
-.navbar-default .navbar-nav > .active > a:hover,
-.navbar-default .navbar-nav > .active > a:focus {
-  color: #ffa500;
-  background-color: #efefef;
+
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover, .navbar-default .navbar-nav>.active>a:focus {
+    color: #ffa500;
+    background-color: #efefef;
 }
-.navbar-default .navbar-nav > .open > a,
-.navbar-default .navbar-nav > .open > a:hover,
-.navbar-default .navbar-nav > .open > a:focus {
-  color: #ffa500;
-  background-color: #efefef;
+
+.navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:hover, .navbar-default .navbar-nav>.open>a:focus {
+    color: #ffa500;
+    background-color: #efefef;
 }
+
 .navbar-default .navbar-toggle {
-  border-color: #efefef;
+    border-color: #efefef;
 }
-.navbar-default .navbar-toggle:hover,
-.navbar-default .navbar-toggle:focus {
-  background-color: #efefef;
+
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+    background-color: #efefef;
 }
+
 .navbar-default .navbar-toggle .icon-bar {
-  background-color: #000000;
+    background-color: #000000;
 }
 
 .navbar-default .navbar-link {
-  color: #000000;
+    color: #000000;
 }
+
 .navbar-default .navbar-link:hover {
-  color: #ffa500;
+    color: #ffa500;
 }
+
+
 /* Carousel*/
 
-.carousel-inner > .item > img,
-.carousel-inner > .item > a > img {
-      width: 100%;
-      margin: auto;
-  }
-.carousel{
+.carousel-inner>.item>img, .carousel-inner>.item>a>img {
+    width: 100%;
+    margin: auto;
+}
+
+.carousel {
     width: 90%;
     margin: auto;
     margin-bottom: 50px;
 }
-.item{
+
+.item {
     font-family: 'Open Sans Condensed', sans-serif;
 }
+
+
 /* Home Page */
 
-.container{
+.container {
     text-align: center;
     font-family: 'Open Sans Condensed', sans-serif;
     color: orange;
 }
 
+
 /* About Page */
-#background{
-    background-color:#f90;
+
+.background {
+    background-color: #f90;
 }
 
-#about{
+.colorDisplay {
     text-align: center;
     width: 60%;
-    height: 650px;
-    background-color: #C63;
+    /*height: 650px;*/
+    background-color: #900;
     border-radius: 10px;
-    }
+}
 
-#about h2{
+.colorDisplay h2 {
     color: #f90;
 }
 
-#about h3{
+.colorDisplay h3 {
     color: #666666;
 }
-#about h4{
+
+.colorDisplay h4 {
     color: #666666;
 }
+
+
 /* Media Query for About Page */
-@media screen and (max-width: 598px){
-    #about{
+
+@media screen and (max-width: 598px) {
+    .colorDisplay {
         width: 85%;
-        height:600px;
+        height: 600px;
     }
-    #about h2{
+    .colorDisplay h2 {
         font-size: 1.5em;
     }
-    #about h3{
+    .colorDisplay h3 {
         font-size: 1.3em;
     }
-    #about h4{
-       font-size: 1.1em;
+    .colorDisplay h4 {
+        font-size: 1.1em;
     }
 }
 
+
 /*Contact Page*/
-#hours{
-    height:350px;
+
+#hours {
+    height: 350px;
     width: 50%;
     background-color: #900;
     border-radius: 10px;
     text-align: center;
-    color:#fff;
+    color: #fff;
     margin-bottom: 50px;
-;
+    ;
 }
-.table{
+
+.table {
     width: 50%;
     margin: auto;
     font-size: 1.2em;
 }
-.table td { 
-     border-top: none !important; 
-    ;
- }
-#info{
-    width: 50%;
-    text-align: center;
-    font-size:1.5em;
-    color:#666666;
 
+.table td {
+    border-top: none !important;
+    ;
 }
-#map-outer { 
+
+#info {
+    width: 50%;
     text-align: center;
     font-size: 1.5em;
     color: #666666;
-    height: 400px; 
-    padding: 20px;  
-    margin-bottom: 20px; 
-  
 }
-#map-container { 
+
+#map-outer {
+    text-align: center;
+    font-size: 1.5em;
+    color: #666666;
+    height: 400px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+#map-container {
     width: 600px;
     height: 350px;
-   
 }
+
 
 /*Media Query Contact*/
 
 @media all and (max-width: 991px) {
-    #map-outer{
-        height: 650px }
+    #map-outer {
+        height: 650px
     }
-@media screen and (max-width: 991px){
-    #hours{
-        width:80%;
+}
+
+@media screen and (max-width: 991px) {
+    #hours {
+        width: 80%;
     }
-    #map-container{
+    #map-container {
         width: 100%;
     }
 }
+
+
 /* Footer */
-  .bg-4 { 
-      background-color: #FFBA00; 
-      color: black;
-  }
-  .container-fluid{
-      width: 100%;
-      padding-top: 20px;
-      padding-bottom: 20px;
-      font-family: 'Open Sans Condensed', sans-serif;
-      font-size: 1.2em;
-  }
+
+.bg-4 {
+    background-color: #FFBA00;
+    color: black;
+}
+
+.container-fluid {
+    width: 100%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 1.2em;
+}
