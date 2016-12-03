@@ -81,12 +81,18 @@
       margin: auto;
   }
 .carousel{
-    width: 90%;
+    width: 60%;
     margin: auto;
     margin-bottom: 50px;
 }
 .item{
     font-family: 'Open Sans Condensed', sans-serif;
+}
+
+@media screen and (max-width: 650px){
+    .carousel{
+        width: 90%;
+    }
 }
 /* Home Page */
 
