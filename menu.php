@@ -1,8 +1,8 @@
 <?php
 // include database configuration file
-include 'dbConfig.php';
+include 'resources/dbConfig.php';
 // include header file
-include '../resources/header.php';
+include 'resources/header.php';
 ?>
 
 <div id="top">
@@ -325,5 +325,5 @@ include '../resources/header.php';
 </div>
 <?php
 // include footer file
-include '../resources/footer.php';
+include 'resources/footer.php';
 ?>

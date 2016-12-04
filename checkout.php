@@ -1,6 +1,6 @@
 <?php
 // include database configuration file
-include 'dbConfig.php';
+include 'resources/dbConfig.php';
 
 // initialize shopping cart class
 include 'cart.php';
@@ -17,26 +17,9 @@ $_SESSION['sessCustomerID'] = 1;
 // get customer details by session customer ID
 $query = $dbc->query("SELECT * FROM customers WHERE id = ".$_SESSION['sessCustomerID']);
 $custRow = $query->fetch_assoc();
-?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <title>Checkout</title>
-      <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <!-- Custom CSS -->
-    <link rel="stylesheet" type="text/css" href="shopping.css">
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
-    
-</head>
-<body>
-<?php
+
 // include header file
-include '../resources/header.php';
+include 'resources/header.php';
 ?>
 
 <div class="container">
@@ -86,7 +69,5 @@ include '../resources/header.php';
 </div>
 <?php
 // include footer file
-include '../resources/footer.php';
+include 'resources/footer.php';
 ?>
-</body>
-</html>

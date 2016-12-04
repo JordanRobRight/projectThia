@@ -1,6 +1,6 @@
 <?php
 // include header file
-include '../resources/header.php';
+include 'resources/header.php';
 ?>
 
     
@@ -14,83 +14,83 @@ include '../resources/header.php';
   <div class="carousel-inner" role="listbox">
    
     <div class="item active">
-        <img src="../image/crab-rangoon.JPG" alt="Crab Rangoon" >
+        <img src="resources/images/crab-rangoon.JPG" alt="Crab Rangoon" >
         <div class="carousel-caption">
           <h3>Crab Rangoon</h3>
         </div>
       </div>
 
     <div class="item">
-      <img src="../image/eggroll.JPG" alt="Egg Roll">
+      <img src="resources/images/eggroll.JPG" alt="Egg Roll">
         <div class="carousel-caption">
           <h3>Egg Roll</h3>
         </div>
     </div>
 
     <div class="item">
-      <img src="../image/Khao Piak.JPG" alt="Khao Piak">
+      <img src="resources/images/Khao Piak.JPG" alt="Khao Piak">
         <div class="carousel-caption">
           <h3>Khao Piak</h3>
         </div>
     </div>
 
     <div class="item">
-      <img src="../image/Pad Kra Pow.JPG" alt="Pad Kra Pow">
+      <img src="resources/images/Pad Kra Pow.JPG" alt="Pad Kra Pow">
         <div class="carousel-caption">
           <h3>Pad Kra Pow</h3>
         </div>
     </div>
       
     <div class="item">
-      <img src="../image/Pad See Ew.JPG" alt="Pad See Ew">
+      <img src="resources/images/Pad See Ew.JPG" alt="Pad See Ew">
         <div class="carousel-caption">
           <h3>Pad See Ew</h3>
         </div>
     </div>
       
     <div class="item">
-      <img src="../image/Pad Thai.JPG" alt="Pad Thai">
+      <img src="resources/images/Pad Thai.JPG" alt="Pad Thai">
         <div class="carousel-caption">
           <h3>Pad Thai</h3>
         </div>
     </div>
     
     <div class="item">
-      <img src="../image/papaya.JPG" alt="Papaya">
+      <img src="resources/images/papaya.JPG" alt="Papaya">
         <div class="carousel-caption">
           <h3>Som Tum (Papaya Salad)</h3>
         </div>
     </div>
     
     <div class="item">
-      <img src="../image/Seafood Salad.JPG" alt="Seafood Salad">
+      <img src="resources/images/Seafood Salad.JPG" alt="Seafood Salad">
         <div class="carousel-caption">
           <h3>Seafood Salad</h3>
         </div>
     </div>
     
     <div class="item">
-      <img src="../image/Siam Fried Rice.JPG" alt="Siam Fried Rice"><div class="carousel-caption">
+      <img src="resources/images/Siam Fried Rice.JPG" alt="Siam Fried Rice"><div class="carousel-caption">
           <h3>Siam Fried Rice</h3>
         </div>
     </div>
     
     <div class="item">
-      <img src="../image/Tom Kha Soup.JPG" alt="Tom Kha Soup">
+      <img src="resources/images/Tom Kha Soup.JPG" alt="Tom Kha Soup">
         <div class="carousel-caption">
           <h3>Tom Kha Soup</h3>
         </div>
     </div>
       
     <div class="item">
-      <img src="../image/Tom Yum Soup.JPG" alt="Tom Yum Soup">
+      <img src="resources/images/Tom Yum Soup.JPG" alt="Tom Yum Soup">
         <div class="carousel-caption">
           <h3>Tom Yum Soup</h3>
         </div>
     </div>
     
     <div class="item">
-      <img src="../image/Yellow Curry.JPG" alt="Yellow Curry">
+      <img src="resources/images/Yellow Curry.JPG" alt="Yellow Curry">
       <div class="carousel-caption">
           <h3>Yellow Curry</h3>
         </div>
@@ -110,5 +110,5 @@ include '../resources/header.php';
    
 <?php
 // include footer file
-include '../resources/footer.php';
+include 'resources/footer.php';
 ?>

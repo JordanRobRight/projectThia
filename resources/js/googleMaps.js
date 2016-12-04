@@ -1,8 +1,4 @@
 /* Google maps functions */
-function delConfirm() {
-    return confirm('Are you sure you want to delete this item? The cannot operation cannot be undone.');
-}
-
 function init_map() {
     var var_location = new google.maps.LatLng(43.0188183, -87.9745458);
 
@@ -15,8 +11,8 @@ function init_map() {
     var contentString =
         '<div id="infowindow_content">' +
         '<p><strong>Siam Thai</strong><br>' +
-        '<br><a href="tel:1-414-672-7246"><b>(414) 672-7426</b></a>'
-    '</div>';
+        '<br><a href="tel:1-414-672-7246"><b>(414) 672-7426</b></a>' +
+        '</div>';
 
     var var_infowindow = new google.maps.InfoWindow({
         content: contentString

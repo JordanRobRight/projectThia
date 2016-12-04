@@ -8,6 +8,24 @@ function priceViz() {
     }
 }
 
+function delConfirm() {
+    return confirm('Are you sure you want to delete this item? The cannot operation cannot be undone.');
+}
+
+function updateCartItem(obj, item_id) {
+    $.get("cartAction.php", {
+        action: "updateCartItem",
+        item_id: item_id,
+        qty: obj.value
+    }, function(data) {
+        if (data == 'ok') {
+            location.reload();
+        } else {
+            alert('Cart update failed, please try again.');
+        }
+    });
+}
+
 /*jQuery Document ready */
 $(document).ready(function() {
     priceViz();

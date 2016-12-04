@@ -1,13 +1,13 @@
 <?php
 // include header file
-include '../resources/header.php';
+include 'resources/header.php';
 ?>
 
-<div class="container-fluid background">
-  <div class="container colorDisplay" id="about">
+  <div class="container-fluid background">
+    <div class="container colorDisplay" id="about">
       <h2>About Us</h2>
       <h2>Siam Thai Restaurant</h2>
-      
+
       <h3>Eat Good, Be Happy</h3>
       <h3>Now is the time to try Siam Thai</h3>
       <h3>Dine In - Carry Out - Pick Up - Delivery</h3>
@@ -18,9 +18,9 @@ include '../resources/header.php';
       <h2>Sunday: Closed</h2>
       <br>
       <h4>15% Gratuity for parties of 5 or more. Please inform your server of any food allergies you may have. <br>$10 minimum for all credit card purchases</h4>
+    </div>
   </div>
-</div>
-<?php
+  <?php
 // include footer file
-include '../resources/footer.php';
+include 'resources/footer.php';
 ?>

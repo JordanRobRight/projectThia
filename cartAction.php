@@ -4,7 +4,7 @@ include 'cart.php';
 $cart = new Cart;
 
 // include database configuration file
-include 'dbConfig.php';
+include 'resources/dbConfig.php';
 if(isset($_REQUEST['action']) && !empty($_REQUEST['action'])){
     if($_REQUEST['action'] == 'addToCart' && !empty($_REQUEST['item_id'])){
         $productID = $_REQUEST['item_id'];
