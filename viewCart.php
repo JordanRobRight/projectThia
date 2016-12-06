@@ -6,8 +6,8 @@ $cart = new Cart;
 
 // include header file
 include 'resources/header.php';
-?>
 
+?>
  
 <div class="container">
     <h1>Shopping Cart</h1>
@@ -40,6 +40,7 @@ include 'resources/header.php';
         <?php } }else{ ?>
         <tr><td colspan="5"><p>Your cart is empty.....</p></td>
         <?php } ?>
+        </tr>
     </tbody>
     <tfoot>
         <tr>
@@ -52,8 +53,11 @@ include 'resources/header.php';
         </tr>
     </tfoot>
     </table>
+
 </div>
 <?php
 // include footer file
 include 'resources/footer.php';
 ?>
+
+
