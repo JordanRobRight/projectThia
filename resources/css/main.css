@@ -204,31 +204,6 @@
     width: 50%;
     margin: auto;
 }
-/* Shopping Cart */
-#cart {
-    font-size: 18px;
-    float: left;
-}
-/* Media Query for Shopping Cart */
-@media screen and (max-width: 600px) {
-    #cart tbody td .form-control {
-        display: inline !important;
-        width: 20%;
-    }
-}
-
-.actions .btn {
-    width: 36%;
-    margin: 1.5em 0;
-}
-
-.actions .btn-info {
-    float: left;
-}
-
-.actions .btn-danger {
-    float: right;
-}
 
 .table td {
     border-top: none !important;
@@ -270,35 +245,60 @@
         width: 100%;
     }
 }
-
-table #cart thead {
-    display: none;
+/* Shopping Cart */
+#cart {
+    font-size: 18px;
+    float: left;
 }
+/* Media Query for Shopping Cart */
+@media screen and (max-width: 600px) {
+    #cart tbody td .form-control {
+        display: inline !important;
+        width: 20%;
+    }
 
-table #cart tbody td {
-    display: block;
-    min-width: 320px;
-    padding: 0.6rem;
-}
+    .actions .btn {
+        width: 36%;
+        margin: 1.5em 0;
+    }
 
-table #cart tbody tr td:first-child {
-    color: #fff;
-    background: #870808;
-}
+    .actions .btn-info {
+        float: left;
+    }
 
-table #cart tbody td:before {
-    font-weight: bold;
-    display: inline-block;
-    width: 8rem;
-    content: attr(data-th);
-}
+    .actions .btn-danger {
+        float: right;
+    }
 
-table #cart tfoot td {
-    display: block;
-}
+    table#cart thead {
+        display: none;
+    }
 
-table #cart tfoot td .btn {
-    display: block;
+    table#cart tbody td {
+        display: block;
+        min-width: 320px;
+        padding: 0.6rem;
+    }
+
+    table#cart tbody tr td:first-child {
+        color: #fff;
+        background: #870808;
+    }
+
+    table#cart tbody td:before {
+        font-weight: bold;
+        display: inline-block;
+        width: 8rem;
+        content: attr(data-th);
+    }
+
+    table#cart tfoot td {
+        display: block;
+    }
+
+    table#cart tfoot td .btn {
+        display: block;
+    }
 }
 /* Order Success Page */
 #success {
