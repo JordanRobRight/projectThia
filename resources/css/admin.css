@@ -1,0 +1,70 @@
+/* Admin styles */
+.adminform {
+    margin: 10px;
+    /*ensure form maintains margins on all screens*/
+}
+
+.adminbtn {
+    margin-top: 15px;
+}
+
+.adminfooter {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    background-color: #f5f5f5;
+    text-align: center;
+    padding-top: 1em;
+}
+
+.admintable {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.admintext-muted {
+    text-align: center;
+    padding-top: 20px;
+}
+
+.btn-menu {
+    min-width: 0;
+    padding: 0;
+    color: #fff !important;
+}
+
+.dropdown-menu > li > a {
+    color: #fff;
+}
+
+.dropdown-menu > li > a.editbtn:focus,
+.dropdown-menu > li > a.editbtn:hover {
+    background-color: #ec971f !important;
+    color: #fff;
+}
+
+.dropdown-menu > li > a.deletebtn:focus,
+.dropdown-menu > li > a.deletebtn:hover {
+    background-color: #c9302c !important;
+    color: #fff;
+}
+
+.navbar-bottom {
+    margin-bottom: 0;
+    margin-top: 0.5em;
+}
+
+.order-detail-list > dt {
+    margin-top: 0.5rem;
+}
+
+.order-detail-list > dd {
+    padding: 1rem 0 1rem 4rem;
+    border: 1px solid #333;
+}
+
+.itemlist {
+    list-style: none;
+    padding: 0;
+}
