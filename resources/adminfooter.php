@@ -1,6 +1,6 @@
 
-        <footer class="adminfooter">
-        	<div class="navbar navbar-default navbar-bottom" role="navigation">
+        <footer class="navbar navbar-default navbar-bottom">
+        	<div class="adminfooter">
  					 	<div class="navbar-footer">
 							&copy; Siam Thai 2016 | Developed by <a id="uwm_sois" href="https://uwm.edu/informationstudies/">UWM SOIS</a>
 						</div>

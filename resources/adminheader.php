@@ -3,6 +3,8 @@
 if (isset($_SESSION['adminLogin'])) {
 	$admin = true;
 }
+
+$curfile = basename($_SERVER["SCRIPT_FILENAME"], '.php');
 ?>
 
 <!DOCTYPE html>
@@ -14,18 +16,35 @@ if (isset($_SESSION['adminLogin'])) {
 		<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 		<!-- changing this part can break compatibility and responsiveness in older browsers -->
 		<?php
-		if ($admin) {
-			echo '<title>Siam Thai - Administration</title>';
-		} else {
-			echo '<title>Siam Thai</title>';
+		switch ($curfile) {
+			case 'menuAdmin':
+				$title = 'Menu Management';
+				$menu = true;
+				break;
+			case 'orderAdmin':
+				$title = 'Active Orders';
+				$orders = true;
+				break;
+			case 'userAdmin':
+				$title = 'Manage Users';
+				$users = true;
+				break;
+			case 'orderDetail':
+				$title = 'Order Details';
+				$orders = true;
+				break;
+			default:
+				$title = 'Siam Thai';
+				break;
 		}
+		echo "<title>$title</title>"
 		?>
 		<!-- use free cdn to get fast page loads of latest compiled and minified css -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
 		<!-- include font -->
     <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
      <!-- Custom CSS -->
-    <link rel="stylesheet" type="text/css" href="resources/css/main.css">
+    <link rel="stylesheet" type="text/css" href="../resources/css/admin.css">
 	</head>
 	<body>
 
@@ -41,9 +60,9 @@ if (isset($_SESSION['adminLogin'])) {
 			</div>
 			<div class="collapse navbar-collapse" id="myNavbar">
 				<ul class="nav navbar-nav">
-					<li><a href="orderAdmin.php">Orders</a></li>
-					<li><a href="menuAdmin.php">Menu</a></li>
-					<li><a href="userAdmin.php">Users</a></li>
+					<li<?php if ($orders){echo ' class="active"';} ?>><a href="orderAdmin.php">Orders</a></li>
+					<li<?php if ($menu){echo ' class="active"';} ?>><a href="menuAdmin.php">Menu</a></li>
+					<li<?php if ($users){echo ' class="active"';} ?>><a href="userAdmin.php">Users</a></li>
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
 					<?php
