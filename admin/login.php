@@ -12,7 +12,7 @@
 
 			$check = $admindb->prepare("SELECT id, username, password FROM user WHERE username=? && password=?");
 
-			$check->bind_param("sss", $uid, $username, $password);
+			$check->bind_param("ss", $username, $password);
 
 			$check->execute();
 

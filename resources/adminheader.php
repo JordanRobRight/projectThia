@@ -15,7 +15,7 @@ if (isset($_SESSION['adminLogin'])) {
 		<!-- changing this part can break compatibility and responsiveness in older browsers -->
 		<?php
 		if ($admin) {
-			echo '<title>Siam Thai - Administrator</title>';
+			echo '<title>Siam Thai - Administration</title>';
 		} else {
 			echo '<title>Siam Thai</title>';
 		}
@@ -37,7 +37,7 @@ if (isset($_SESSION['adminLogin'])) {
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="#">Siam Thai</a>
+				<a class="navbar-brand" href="../">Siam Thai</a>
 			</div>
 			<div class="collapse navbar-collapse" id="myNavbar">
 				<ul class="nav navbar-nav">
