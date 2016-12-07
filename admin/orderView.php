@@ -56,7 +56,7 @@ if ($error) {
 
   echo '<h2>Order Details - Order #'.$num.'</h2>
   <a href="orderAdmin.php" class="btn btn-sm btn-warning">Back to View Orders<span class="glyphicon glyphicon-new-window></span>"</a>
-  <a href="completeOrder.php?oid='.$orderid.'" class="btn btn-sm btn-success pull-right">Complete Order <span class="glyphicon glyphicon-ok-sign"></span></a>
+  <a href="orderAdmin.php?oid='.$orderid.'&cmp=t" class="btn btn-sm btn-success pull-right">Complete Order <span class="glyphicon glyphicon-ok-sign"></span></a>
   <dl class="order-detail-list">
     <dt>Order Placed:</dt>
     <dd>'.$recd.'</dd>

@@ -12,7 +12,7 @@
 			echo "<div class=\"alert alert-danger\">$error</div>";
 	} else if ($success) {
 			echo "<div class=\"alert alert-success\">$success</div>";
-		}
+	}
 ?>
 
 
@@ -117,6 +117,8 @@
 					$dir = 'asc';
 				}
 				
+				$pgdir = ($_GET['dir']);
+				
 				if ($dir == asc) {
 					$srtdir = "DESC";
 				} else {
@@ -125,7 +127,7 @@
 				
 				switch ($sort) {
 					case 'nm':
-						$order = 'item_name';
+						$order = 'item_name '.$srtdir;
 						break;
 
 					case 'pr':
@@ -149,6 +151,7 @@
 
 			} else {
 				$curpg = 1;
+				$order = 'category';
 			}
 
 			$q = "SELECT COUNT(*) FROM Items";						//calculate the number of pages and offset value
@@ -178,13 +181,13 @@
 				if ($items) {
 					echo'<thead>
 					<tr>
-						<th><a href="menuAdmin.php?s=nm&p='.$curpg.'&dir='.$dir.'">Menu Item</a></th>
+						<th><a href="menuAdmin.php?s=nm&dir='.$dir.'">Menu Item</a></th>
 						<th>Sizes</th>
-						<th><a href="menuAdmin.php?s=pr&p='.$curpg.'&dir='.$dir.'">Price</a></th>
-						<th><a href="menuAdmin.php?s=lp&p='.$curpg.'&dir='.$dir.'">Large Price</a></th>
-						<th><a href="menuAdmin.php?s=ds&p='.$curpg.'&dir='.$dir.'">Description</a></th>
-						<th><a href="menuAdmin.php?s=ct&p='.$curpg.'&dir='.$dir.'">Category</a></th>
-						<th><a href="menuAdmin.php?s=pt&p='.$curpg.'&dir='.$dir.'">Protein</a></th>
+						<th><a href="menuAdmin.php?s=pr&dir='.$dir.'">Price</a></th>
+						<th><a href="menuAdmin.php?s=lp&dir='.$dir.'">Large Price</a></th>
+						<th><a href="menuAdmin.php?s=ds&dir='.$dir.'">Description</a></th>
+						<th><a href="menuAdmin.php?s=ct&dir='.$dir.'">Category</a></th>
+						<th><a href="menuAdmin.php?s=pt&dir='.$dir.'">Protein</a></th>
 						<th>Action</th>
 					</tr>
 					</thead>
@@ -246,7 +249,7 @@
 							} else {
 								$activeClass = ' class="pgli"';
 							}
-							echo '<li'.$activeClass. '><a href="menuAdmin.php?p='.$i.'">'.$i.'</a></li>';
+							echo '<li'.$activeClass. '><a href="menuAdmin.php?p='.$i.'&s='.$sort.'&dir='.$pgdir.'">'.$i.'</a></li>';
 						}
 						echo '<li'.$next.'>
 							<a href="menuAdmin.php?p='.($curpg+1).'" aria-label="Next">

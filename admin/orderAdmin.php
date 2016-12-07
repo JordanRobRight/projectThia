@@ -2,12 +2,17 @@
 require("adminauth.php");  //adminauth has to be included first, so session_start() function is at top of final script
 include("../resources/dbConfig.php");
 include("../resources/adminheader.php");
+include("completeOrder.php");
 ?>
 <div class="container-fluid">
   <h2>Active Orders</h2>
 <?php
 if ($error) {
   echo '<div class="alert alert-danger">'.$error.'</div>';
+}
+
+if ($success) {
+echo '<div class="alert alert-success">'.$success.'</div>';
 }
 $query = 'SELECT o.id, DATE_FORMAT(o.created,\'%h:%i %p %b-%e\') AS created, c.name, ocq.total_items FROM
 	(SELECT oiq.order_id, SUM(oiq.theCount * oiq.quantity) AS total_items FROM
