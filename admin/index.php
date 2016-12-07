@@ -3,13 +3,14 @@
 
 	if(isset($_SESSION['adminLogin'])){  //if session already set redirect
 		header("location: dashboard.php");
+		exit();
 	}
 		include("/home/walle/public_html/siam/resources/adminheader.php"); //use consistent html head
 ?>
 
 	<div class="container">
 		<h2>Administrator Login</h2>
-		<form id="login" action="" method="post" class="form-horizontal">
+		<form id="login" action="" method="post" class="form-horizontal adminform">
 			<?php
 			if ($error) {
 				echo '<div class="form-group has-error"><span id="badLogin" class="help-block"> '.$error.' </span></div>';
@@ -34,7 +35,7 @@
   			</label>
 			</div>
 			<div class="form-group">
-				<input type="submit" value="Submit" class="btn btn-success" /> <input type="reset" value="Reset" class="btn btn-danger"/>
+				<input type="submit" value="Submit" class="btn btn-success adminbtn" /> <input type="reset" value="Reset" class="btn btn-danger adminbtn"/>
 			</div>
 		</form>
 	</div>

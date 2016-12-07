@@ -22,32 +22,10 @@ if (isset($_SESSION['adminLogin'])) {
 		?>
 		<!-- use free cdn to get fast page loads of latest compiled and minified css -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
-		<style>
-		/*make space for bootstrap navbar if using fixed nav*/
-		/* Margin bottom by footer height*/
-			/*body {
-				padding-top: 50px;
-				margin-bottom: 60px;
-			}*/
-			form {
-				margin: 10px; /*ensure form maintains margins on all screens*/
-			}
-			.btn {
-				margin-top: 15px;
-			}
-			footer {
-				position: relative;
-				bottom: 0;
-				width: 100%;
-				height: 60px;  /* Set the fixed height of the footer here */
-				background-color: #f5f5f5;
-                text-align: center;
-			}
-			.text-muted{
-					text-align: center;
-					padding-top: 20px;
-			}
-		</style>
+		<!-- include font -->
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+     <!-- Custom CSS -->
+    <link rel="stylesheet" type="text/css" href="resources/css/main.css">
 	</head>
 	<body>
 
@@ -63,19 +41,14 @@ if (isset($_SESSION['adminLogin'])) {
 			</div>
 			<div class="collapse navbar-collapse" id="myNavbar">
 				<ul class="nav navbar-nav">
+					<li><a href="#">Orders</a></li>
 					<li><a href="#">Menu</a></li>
-					<li><a href="#">About</a></li>
-					<li><a href="#">Contact</a></li>
-					<li><a href="#">Order</a></li>
-					<li><a href="#">Chart</a></li>
+					<li><a href="#">Users</a></li>
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
 					<?php
 					if ($admin) {
 						echo '<li><a href="http://wall-e.uwmsois.com/siam/admin/logout.php"><span class="glyphicon glyphicon-log-out"></span> Log Out</a></li>';
-					} else {
-						echo '<li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>';
-						echo '<li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>';
 					}
 					 ?>
 				</ul>
