@@ -26,7 +26,7 @@
 			{
     		//redirect to different page for the message
     		$_SESSION['adminLogin'] = $uid.$username;
-     		header('Location: dashboard.php');
+     		header('Location: orderAdmin.php');
      		exit();
 			}
 			else {

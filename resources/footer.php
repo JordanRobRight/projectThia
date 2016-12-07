@@ -1,5 +1,5 @@
-    <footer class="container-fluid bg-4 text-center adminfooter">
-      <p>&copy; Siam Thai 2016 | Developed by: <a href="http://uwm.edu/informationstudies/">UWM SOIS</a></p>
+    <footer class="container-fluid bg-4 text-center">
+      <p>&copy; Siam Thai 2006 | Developed by: <a href="http://uwm.edu/informationstudies/">UWM SOIS</a></p>
     </footer>
     
     <!-- include js at the end for faster page loads -->

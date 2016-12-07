@@ -41,9 +41,9 @@ if (isset($_SESSION['adminLogin'])) {
 			</div>
 			<div class="collapse navbar-collapse" id="myNavbar">
 				<ul class="nav navbar-nav">
-					<li><a href="#">Orders</a></li>
-					<li><a href="#">Menu</a></li>
-					<li><a href="#">Users</a></li>
+					<li><a href="orderAdmin.php">Orders</a></li>
+					<li><a href="menuAdmin.php">Menu</a></li>
+					<li><a href="userAdmin.php">Users</a></li>
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
 					<?php
