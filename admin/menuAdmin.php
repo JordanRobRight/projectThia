@@ -111,18 +111,22 @@
 					$sort = strtolower(filter_var($_GET['s'],FILTER_SANITIZE_STRING));
 				}
 				
-				if ($_GET['dir'] == 'asc'){
+				if (isset($_GET['dir'])) {
+					if ($_GET['dir'] == 'asc'){
+						$dir = 'dsc';
+					}	else {
+						$dir = 'asc';
+					}
+				} else {
 					$dir = 'dsc';
-				}	else {
-					$dir = 'asc';
 				}
 				
 				$pgdir = ($_GET['dir']);
 				
-				if ($dir == asc) {
-					$srtdir = "DESC";
+				if ($dir == 'asc') {
+					$srtdir = 'DESC';
 				} else {
-					$srtdir = "ASC";
+					$srtdir = 'ASC';
 				}
 				
 				switch ($sort) {
@@ -131,19 +135,19 @@
 						break;
 
 					case 'pr':
-							$order = 'price '.$srtdir.', item_name';
-							break;
+						$order = 'price '.$srtdir.', item_name';
+						break;
 					case 'lp':
-							$order = 'l_price '.$srtdir.', item_name';
-							break;
+						$order = 'l_price '.$srtdir.', item_name';
+						break;
 					case 'ds':
-							$order = 'item_description '.$srtdir;
-							break;
+						$order = 'item_description '.$srtdir;
+						break;
 					case 'pt':
-							$order = 'protein '.$srtdir.', item_name';
-							break;
+						$order = 'protein '.$srtdir.', item_name';
+						break;
+					case 'ct':
 
-					
 					default:
 						$order = 'category '.$srtdir.', item_name';
 						break;
