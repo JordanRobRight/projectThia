@@ -222,7 +222,7 @@
 									<button type="button" class="btn btn-sm btn-warning dropdown-toggle btn-block" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Options  <span class="glyphicon glyphicon-cog"></span></button>
 									<ul class="dropdown-menu btn-menu">
 										<li><a href="menuAdmin.php?e=t&eid='.$iid.'&p='.$curpg.'" alt="edit item" class="btn btn-sm btn-warning btn-block editbtn">Edit <br />Item</a></li>
-										<li><a href="menuAdmin.php?d=t&did='.$iid.'&p='.$curpg.'" alt="delete item" class="btn btn-sm btn-danger deletebtn" id="del'.$iid.'" onclick="return delConfirm()">Delete <br />Item</a></li>
+										<li><a href="menuAdmin.php?d=m&did='.$iid.'&p='.$curpg.'" alt="delete item" class="btn btn-sm btn-danger deletebtn" id="del'.$iid.'" onclick="return delConfirm()">Delete <br />Item</a></li>
 									</ul>
 								</div>
 							</td>
