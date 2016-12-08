@@ -27,7 +27,7 @@
 		mysqli_prepare($dbc, $query);
 
 		$updQuery = mysqli_prepare($dbc, $query);
-		mysqli_stmt_bind_param($updQuery, "ssssdddd", $iname, $idesc, $cat, $protein, $price, $sprice, $lprice, $id);
+		mysqli_stmt_bind_param($updQuery, "ssssdddd", $iname, $idesc, $cat, $prot, $price, $sprice, $lprice, $id);
 		if (mysqli_stmt_execute($updQuery)) {
 			$success = 'Item has been successfully updated';
 		} else {
@@ -35,14 +35,14 @@
 		}
 
 		if ($error){
-			header('location:dashboard.php?err='.urlencode($error));
+			header('location:menuAdmin.php?err='.urlencode($error));
 		} elseif ($success){
-			header('location:dashboard.php?scs='.urlencode($success));
+			header('location:menuAdmin.php?scs='.urlencode($success));
 		}
 
 
 	} else {
-		header('location:dashboard.php');
+		header('location:menuAdmin.php');
 	}
 
 

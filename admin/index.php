@@ -2,7 +2,7 @@
 	include("login.php"); //include login script
 
 	if(isset($_SESSION['adminLogin'])){  //if session already set redirect
-		header("location: dashboard.php");
+		header("location: orderAdmin.php");
 		exit();
 	}
 		include("/home/walle/public_html/siam/resources/adminheader.php"); //use consistent html head

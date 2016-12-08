@@ -15,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] == "GET") {
 			if (@mysqli_query($dbc,$dq)) {
 				$success = 'Record has been deleted';
 			} else {
-				$error = 'Something went wrong.'.$delrows.' rows were returned. Please return to the <a href="dashboard.php">home page</a> and try again.';
+				$error = 'Something went wrong.'.$delrows.' rows were returned. Please return to the <a href="orderAdmin.php">home page</a> and try again.';
 			}
 		}
 	}
