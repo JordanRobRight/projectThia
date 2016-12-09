@@ -28,12 +28,6 @@
 					<input type="password" name="password" id="password" value="" class="form-control"/>
 				</div>
 			</div>
-			<div class="checkbox">
-  			<label>
-    			<input type="checkbox" value="1">
-    			Remember Me
-  			</label>
-			</div>
 			<div class="form-group">
 				<input type="submit" value="Submit" class="btn btn-success adminbtn" /> <input type="reset" value="Reset" class="btn btn-danger adminbtn"/>
 			</div>

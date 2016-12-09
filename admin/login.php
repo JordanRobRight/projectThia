@@ -9,8 +9,9 @@
 			//define the username and pass for the session
 			$username = filter_var($_POST['username'], FILTER_SANITIZE_STRING);
 			$password = sha1(filter_var($_POST['password'],FILTER_SANITIZE_STRING));
+			$remember = filter_var($_POST['remember'],FILTER_SANITIZE_NUMBER_INT);
 
-			$check = $admindb->prepare("SELECT id, username, password FROM user WHERE username=? && password=?");
+			$check = $dbc->prepare("SELECT id, username, password FROM user WHERE username=? && password=?");
 
 			$check->bind_param("ss", $username, $password);
 
@@ -32,7 +33,7 @@
 			else {
 				$error = "Invalid Credentials. Please try again.";
 			}
-			mysqli_close($admindb);
+			mysqli_close($dbc);
 		}
 	}
 ?>
