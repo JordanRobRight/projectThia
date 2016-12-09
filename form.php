@@ -5,6 +5,7 @@ include 'resources/header.php';
 
 ?>
 <div class="container">
+<div class="col-lg-12 col-md-12 col-sm-6">
 <form action="insert.php" method="post" class="form-horizontal">
 <fieldset>
 
@@ -85,6 +86,7 @@ include 'resources/header.php';
 
 </fieldset>
 </form>
+</div>
 </div>
 <?php
 include 'resources/footer.php'
