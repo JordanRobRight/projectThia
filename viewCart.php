@@ -3,34 +3,7 @@
 
 include 'cart.php';
 $cart = new Cart;
-?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <title>View Cart</title>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <!-- Custom CSS -->
-    <link rel="stylesheet" type="text/css" href="shopping.css">
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
-    <script>
-    function updateCartItem(obj,item_id){
-        $.get("cartAction.php", {action:"updateCartItem", item_id:item_id, qty:obj.value}, function(data){
-            if(data == 'ok'){
-                location.reload();
-            }else{
-                alert('Cart update failed, please try again.');
-            }
-        });
-    }
-    </script>
-</head>
-<body>
-<?php
+
 // include header file
 include 'resources/header.php';
 ?>

@@ -12,7 +12,8 @@ if($cart->total_items() <= 0){
 }
 
 // set customer ID in session
-$_SESSION['sessCustomerID'];
+$_SESSION['sessCustomerID'] = 1;
+
 // get customer details by session customer ID
 $query = $dbc->query("SELECT * FROM customers WHERE id = ".$_SESSION['sessCustomerID']);
 $custRow = $query->fetch_assoc();
@@ -22,7 +23,7 @@ include 'resources/header.php';
 ?>
 
 <div class="container">
-<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+<div class="col-lg-12 col-md-8 col-sm-10">
     <h1>Order Preview</h1>
     <table id="cart" class="table table-hover table-condensed">
     <thead>
@@ -47,7 +48,7 @@ include 'resources/header.php';
             <td><?php echo '$'.$item["subtotal"]; ?></td>
         </tr>
         <?php } }else{ ?>
-        <tr><td colspan="4"><p>No items in your cart......</p></td></tr>
+        <tr><td colspan="4"><p>No items in your cart......</p></td>
         <?php } ?>
     </tbody>
     <tfoot>
@@ -57,20 +58,17 @@ include 'resources/header.php';
             <td class="text-center"><strong>Total <?php echo '$'.$cart->total(); ?></strong></td>
             <?php } ?>
         </tr>
-
     </tfoot>
     </table>
     </div>
     <div class="footBtn">
-    <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
         <a href="menu.php" class="btn btn-warning"><i class="glyphicon"></i> Continue Shopping</a>
         <a href="cartAction.php?action=placeOrder" class="btn btn-success orderBtn">Place Order <i class="glyphicon"></i></a>
     </div>
-</div>
-</div>
 
-
+</div>
 <?php
 // include footer file
 include 'resources/footer.php';
+?>
 
