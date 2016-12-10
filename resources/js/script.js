@@ -9,7 +9,7 @@ function priceViz() {
 }
 
 function delConfirm() {
-    return confirm('Are you sure you want to delete this item? The cannot operation cannot be undone.');
+    return confirm('Are you sure you want to delete this? The cannot operation cannot be undone.');
 }
 
 function updateCartItem(obj, item_id) {

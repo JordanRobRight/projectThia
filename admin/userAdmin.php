@@ -6,6 +6,12 @@ include("create-user.php");
 
  ?>
  <div class="container-fluid">
+   <?php
+   if ($error){
+     echo "<div class=\"alert alert-danger\">$error</div>";
+   } elseif ($success) {
+     echo "<div class=\"alert alert-success\">$success</div>";
+   }?>
  	<div class="row">
  		<div class="col-md-4">
  			<!--  Begin form for adding a user  -->
@@ -42,52 +48,36 @@ include("create-user.php");
 
  				<?php
  			
- 				$items = mysqli_query($dbc, "SELECT * from Items ORDER BY $order LIMIT $offset, $display");
- 				if ($items) {
+ 				$users = mysqli_query($dbc, "SELECT * from user");
+ 				if ($users) {
  					echo'<thead>
  					<tr>
- 						<th><a href="menuAdmin.php?s=nm&dir='.$dir.'">Menu Item</a></th>
- 						<th>Sizes</th>
- 						<th><a href="menuAdmin.php?s=pr&dir='.$dir.'">Price</a></th>
- 						<th><a href="menuAdmin.php?s=lp&dir='.$dir.'">Large Price</a></th>
- 						<th><a href="menuAdmin.php?s=ds&dir='.$dir.'">Description</a></th>
- 						<th><a href="menuAdmin.php?s=ct&dir='.$dir.'">Category</a></th>
- 						<th><a href="menuAdmin.php?s=pt&dir='.$dir.'">Protein</a></th>
+ 						<th><a href="menuAdmin.php?s=nm&dir='.$dir.'">Id</a></th>
+ 						<th><a href="menuAdmin.php?s=pr&dir='.$dir.'">Username</a></th>
+ 						<th><a href="menuAdmin.php?s=lp&dir='.$dir.'">Full Name</a></th>
+ 						<th><a href="menuAdmin.php?s=ds&dir='.$dir.'">Email</a></th>
  						<th>Action</th>
  					</tr>
  					</thead>
  					<tbody>';
  					$i = 1;
- 					while ($row = mysqli_fetch_array($items, MYSQLI_ASSOC)) {
- 						$item = $row['item_name'];
- 						if (!empty($row['s_price']) && $row['s_price'] != 0){					//some manually inserted menu items have s_price = NULL and those passed from UI get set to 0.00
- 							$price = $row['s_price'];
- 							$lprice = $row['l_price'];
- 							$sizes = 'S/L';
- 						} else {
- 							$price = $row['price'];
- 							$lprice = 'n/a';
- 							$sizes = 'One Size';
- 						}
- 						$desc = $row['item_description'];
- 						$cat = ucWords(strtolower($row['category']));
- 						$meat = ucWords(strtolower($row['protein']));
- 						$iid=$row['item_id'];
+ 					while ($row = mysqli_fetch_array($users, MYSQLI_ASSOC)) {
+ 						$id = $row['id'];
+ 						$uname = $row['username'];
+ 						$name = $row['name'];
+ 						$email = $row['email'];
  						echo
  						'<tr>
- 							<td>'.$item.'</td>
- 							<td>'.$sizes.'</td>
- 							<td>'.$price.'</td>
- 							<td>'.$lprice.'</td>
- 							<td>'.$desc.'</td>
- 							<td>'.$cat.'</td>
- 							<td>'.$meat.'</td>
+ 							<td>'.$id.'</td>
+ 							<td>'.$uname.'</td>
+ 							<td>'.$name.'</td>
+ 							<td>'.$email.'</td>
  							<td>
  								<div class="btn-group">
  									<button type="button" class="btn btn-sm btn-warning dropdown-toggle btn-block" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Options  <span class="glyphicon glyphicon-cog"></span></button>
  									<ul class="dropdown-menu btn-menu">
- 										<li><a href="menuAdmin.php?e=t&eid='.$iid.'&p='.$curpg.'" alt="edit user" class="btn btn-sm btn-warning btn-block editbtn">Edit <br />Item</a></li>
- 										<li><a href="menuAdmin.php?d=t&did='.$iid.'&p='.$curpg.'" alt="delete user" class="btn btn-sm btn-danger deletebtn" id="del'.$iid.'" onclick="return delConfirm()">Delete <br />Item</a></li>
+ 										<li><a href="changePwd.php?id='.$id.'" alt="edit user" class="btn btn-sm btn-warning btn-block editbtn">Change <br />Password</a></li>
+ 										<li><a href="deleteUser.php? id='.$id.'" alt="delete user" class="btn btn-sm btn-danger deletebtn" id="del'.$id.'" onclick="return delConfirm()">Delete <br />User</a></li>
  									</ul>
  								</div>
  							</td>
