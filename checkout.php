@@ -11,12 +11,13 @@ if($cart->total_items() <= 0){
     header("Location: menu.php");
 }
 
-// set customer ID in session
-$_SESSION['sessCustomerID'] = 1;
-
 // get customer details by session customer ID
-$query = $dbc->query("SELECT * FROM customers WHERE id = ".$_SESSION['sessCustomerID']);
-$custRow = $query->fetch_assoc();
+echo $phone.$email.$name;
+$query = @mysqli_query($dbc,"SELECT * FROM customers WHERE phone = $phone");
+$custRow = @mysqli_fetch_assoc($query);
+
+// set customer ID in session
+$_SESSION['sessCustomerID'] = $custRow['id'];
 
 // include header file
 include 'resources/header.php';
@@ -25,41 +26,53 @@ include 'resources/header.php';
 <div class="container">
 <div class="col-lg-12 col-md-8 col-sm-10">
     <h1>Order Preview</h1>
-    <table id="cart" class="table table-hover table-condensed">
-    <thead>
-        <tr>
-            <th>Product</th>
-            <th>Price</th>
-            <th>Quantity</th>
-            <th>Subtotal</th>
-        </tr>
-    </thead>
-    <tbody>
+    <div class="row">
+      <div class="col-md-4">
+        <h3>Delivery Information: </h3>
         <?php
-        if($cart->total_items() > 0){
-            //get cart items from session
-            $cartItems = $cart->contents();
-            foreach($cartItems as $item){
-        ?>
-        <tr>
-            <td><?php echo $item["item_name"]; ?></td>
-            <td><?php echo '$'.$item["price"];?></td>
-            <td><?php echo $item["qty"]; ?></td>
-            <td><?php echo '$'.$item["subtotal"]; ?></td>
-        </tr>
-        <?php } }else{ ?>
-        <tr><td colspan="4"><p>No items in your cart......</p></td>
-        <?php } ?>
-    </tbody>
-    <tfoot>
-        <tr>
-            <td colspan="3"></td>
-            <?php if($cart->total_items() > 0){ ?>
-            <td class="text-center"><strong>Total <?php echo '$'.$cart->total(); ?></strong></td>
-            <?php } ?>
-        </tr>
-    </tfoot>
-    </table>
+        echo "<p>Name: $name <br />
+        Address: $address $city $state $zip <br />
+        Phone: $phone <br />
+        Email: $email <br />" ?>
+      </div>
+      <div class="col-md-8">
+        <table id="cart" class="table table-hover table-condensed">
+          <thead>
+              <tr>
+                  <th>Product</th>
+                  <th>Price</th>
+                  <th>Quantity</th>
+                  <th>Subtotal</th>
+              </tr>
+          </thead>
+          <tbody>
+              <?php
+              if($cart->total_items() > 0){
+                  //get cart items from session
+                  $cartItems = $cart->contents();
+                  foreach($cartItems as $item){
+              ?>
+              <tr>
+                  <td><?php echo $item["item_name"]; ?></td>
+                  <td><?php echo '$'.$item["price"];?></td>
+                  <td><?php echo $item["qty"]; ?></td>
+                  <td><?php echo '$'.$item["subtotal"]; ?></td>
+              </tr>
+              <?php } }else{ ?>
+              <tr><td colspan="4"><p>No items in your cart......</p></td>
+              <?php } ?>
+          </tbody>
+          <tfoot>
+              <tr>
+                  <td colspan="3"></td>
+                  <?php if($cart->total_items() > 0){?>
+                  <td class="text-center"><strong>Total <?php echo money_format('%n', $cart->total()); ?></strong></td>
+                  <?php } ?>
+              </tr>
+          </tfoot>
+        </table>
+      </div>
+    </div>
     </div>
     <div class="footBtn">
         <a href="menu.php" class="btn btn-warning"><i class="glyphicon"></i> Continue Shopping</a>
@@ -71,4 +84,3 @@ include 'resources/header.php';
 // include footer file
 include 'resources/footer.php';
 ?>
-

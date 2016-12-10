@@ -21,6 +21,8 @@
       $title = 'Siam Thai';
     }
     echo "<title>$title</title>\r\n";
+    
+    setlocale(LC_MONETARY, 'en_US');  //set locale to use money_format to display currency
     ?>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">

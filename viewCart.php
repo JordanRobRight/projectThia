@@ -30,9 +30,9 @@ include 'resources/header.php';
         ?>
         <tr>
             <td data-th="Item"><?php echo $item["item_name"]; ?></td>
-            <td data-th="Price"><?php echo '$'.$item["price"]; ?></td>
+            <td data-th="Price"><?php echo money_format('%n', $item["price"]); ?></td>
             <td data th="Quantity"><input type="number" class="form-control text-center" value="<?php echo $item["qty"]; ?>" onchange="updateCartItem(this, '<?php echo $item["rowid"]; ?>')"></td>
-            <td data-th="Subtotal"><?php echo '$'.$item["subtotal"]; ?></td>
+            <td data-th="Subtotal"><?php echo money_format('%n', $item["subtotal"]); ?></td>
             <td>
                 <a href="cartAction.php?action=removeCartItem&item_id=<?php echo $item["rowid"]; ?>" class="btn btn-danger" onclick="return confirm('Are you sure?')"><i class="glyphicon glyphicon-trash"></i></a>
             </td>
