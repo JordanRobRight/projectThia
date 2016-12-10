@@ -3,6 +3,7 @@ require("adminauth.php");  //adminauth has to be included first, so session_star
 include("../resources/dbConfig.php");
 include("../resources/adminheader.php");
 include("create-user.php");
+include("deleteUser.php");
 
  ?>
  <div class="container-fluid">
@@ -77,7 +78,7 @@ include("create-user.php");
  									<button type="button" class="btn btn-sm btn-warning dropdown-toggle btn-block" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Options  <span class="glyphicon glyphicon-cog"></span></button>
  									<ul class="dropdown-menu btn-menu">
  										<li><a href="changePwd.php?id='.$id.'" alt="edit user" class="btn btn-sm btn-warning btn-block editbtn">Change <br />Password</a></li>
- 										<li><a href="deleteUser.php? id='.$id.'" alt="delete user" class="btn btn-sm btn-danger deletebtn" id="del'.$id.'" onclick="return delConfirm()">Delete <br />User</a></li>
+ 										<li><a href="userAdmin.php?d=t&id='.$id.'" alt="delete user" class="btn btn-sm btn-danger deletebtn" id="del'.$id.'" onclick="return delConfirm()">Delete <br />User</a></li>
  									</ul>
  								</div>
  							</td>
