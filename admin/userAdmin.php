@@ -17,7 +17,7 @@ include("deleteUser.php");
  		<div class="col-md-4">
  			<!--  Begin form for adding a user  -->
  			<h2>Add New Authorized User</h2>
- 			<form id="addItem" class="adminform" method="POST" Action="userAdmin.php">
+ 			<form id="addUser" class="adminform" method="POST" Action="userAdmin.php">
  				<input name="id" type="hidden"<?php if (!empty($uid)){echo ' value="'.$uid.'"';}?>>
  				<div class="form-group">
  					<label for="username">Username:</label>
@@ -49,7 +49,7 @@ include("deleteUser.php");
 
  				<?php
  			
- 				$users = mysqli_query($dbc, "SELECT * from user");
+ 				$users = @mysqli_query($dbc, "SELECT * from user");
  				if ($users) {
  					echo'<thead>
  					<tr>
@@ -62,7 +62,7 @@ include("deleteUser.php");
  					</thead>
  					<tbody>';
  					$i = 1;
- 					while ($row = mysqli_fetch_array($users, MYSQLI_ASSOC)) {
+ 					while ($row = @mysqli_fetch_array($users, MYSQLI_ASSOC)) {
  						$id = $row['id'];
  						$uname = $row['username'];
  						$name = $row['name'];
