@@ -106,7 +106,7 @@ include 'resources/header.php';
 
 <!-- Salad -->
 <div id="salad" class="container products">
-    <h2>Noodle Soups</h2>
+    <h2>Salad</h2>
     <div class="row list-group">
         <?php
         //get rows query
