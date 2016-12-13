@@ -76,7 +76,7 @@ include 'resources/header.php';
     </div>
     <div class="footBtn">
         <a href="menu.php" class="btn btn-warning"><i class="glyphicon"></i> Continue Shopping</a>
-        <a href="cartAction.php?action=placeOrder" class="btn btn-success orderBtn">Place Order <i class="glyphicon"></i></a>
+        <a href="cartAction.php?action=placeOrder" class="btn btn-success orderBtn">Continue to Payment <i class="glyphicon"></i></a>
     </div>
 
 </div>
