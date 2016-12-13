@@ -10,6 +10,7 @@ $city = filter_var($_POST['city'], FILTER_SANITIZE_STRING);
 $state = filter_var($_POST['state'], FILTER_SANITIZE_STRING);
 $zip = filter_var($_POST['zip'], FILTER_SANITIZE_STRING);
 
+// Check for empty text inputs
 $check = [
   "Name" => $name,
   "Email" => $email,
@@ -19,6 +20,7 @@ $check = [
   "State" => $state,
   "Zip" => $zip
 ];
+// Shows which text inputs were empty
 foreach($check as $key => $chk){
   if (empty($chk)){
     if (empty($error)){
@@ -30,6 +32,7 @@ foreach($check as $key => $chk){
   }
 }
 
+//if there are no errors insert into database
 if (!isset($error)){
   // attempt insert query execution
   $sql = "INSERT INTO customers (name, email, phone, address, city, state, zip) VALUES (?, ?, ?, ?, ?, ?, ?)";

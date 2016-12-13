@@ -17,7 +17,7 @@ include 'resources/header.php';
         <!-- Form Name -->
         <legend>Customer Information</legend>
 
-        <!-- Text input-->
+        <!-- Text input for name-->
         <div class="form-group">
           <label class="col-md-4 control-label" for="name">Name:</label>
           <div class="col-md-4">
@@ -25,7 +25,7 @@ include 'resources/header.php';
           </div>
         </div>
 
-        <!-- Text input-->
+        <!-- Text input for email-->
         <div class="form-group">
           <label class="col-md-4 control-label" for="email">Email:</label>
           <div class="col-md-4">
@@ -33,7 +33,7 @@ include 'resources/header.php';
           </div>
         </div>
 
-        <!-- Text input-->
+        <!-- Text input phone number-->
         <div class="form-group">
           <label class="col-md-4 control-label" for="phone">Phone Number:</label>
           <div class="col-md-4">
@@ -41,7 +41,7 @@ include 'resources/header.php';
           </div>
         </div>
 
-        <!-- Text input-->
+        <!-- Text input for address-->
         <div class="form-group">
           <label class="col-md-4 control-label" for="address">Address:</label>
           <div class="col-md-4">
@@ -49,7 +49,7 @@ include 'resources/header.php';
           </div>
         </div>
 
-        <!-- Text input-->
+        <!-- Text input for city-->
         <div class="form-group">
           <label class="col-md-4 control-label" for="city">City:</label>
           <div class="col-md-4">
@@ -57,15 +57,15 @@ include 'resources/header.php';
           </div>
         </div>
 
-        <!-- Text input-->
+        <!-- Text input for state-->
         <div class="form-group">
           <label class="col-md-4 control-label" for="state">State:</label>
           <div class="col-md-1">
-            <input id="state" name="state" type="text" placeholder="" class="form-control input-md" value="Wi">
+            <input id="state" name="state" type="text" placeholder="" class="form-control input-md" value="WI">
           </div>
         </div>
 
-        <!-- Text input-->
+        <!-- Text input for zip code-->
         <div class="form-group">
           <label class="col-md-4 control-label" for="zip">Zip Code:</label>
           <div class="col-md-2">
